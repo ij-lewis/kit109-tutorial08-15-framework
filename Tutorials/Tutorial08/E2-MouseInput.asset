@@ -19,7 +19,7 @@ MonoBehaviour:
         m_Untranslated: Mouse Input
       Text:
         m_Untranslated: In the previous tutorials we shot using Spacebar. In this
-          game we will use the mouse. The code for this is actually relatively short as we can use the <doc>Input.GetMouseButton</doc>
+          game we will use the mouse. The code for this is actually relatively short as we can use the <doc>Mouse.current.leftButton.isPressed</doc>
           function.
       m_PollItems: []
       m_PollCorrectItemIndexes: 00000000

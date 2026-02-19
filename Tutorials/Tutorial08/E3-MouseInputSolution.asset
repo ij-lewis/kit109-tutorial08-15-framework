@@ -22,13 +22,13 @@ MonoBehaviour:
 
           <code>
 
-          bool shooting = Input.GetMouseButton(0)
+          bool shooting = Mouse.current.leftButton.isPressed
 
           </code>
 
-          The
-          parameter <c>0</c> refers to the left mouse button. We could make it right-click
-          with <c>1</c>.'
+          We
+          use <c>leftButton</c> to access the left mouse button. We could make it right-click
+          with <c>rightButton</c>.'
       m_PollItems: []
       m_PollCorrectItemIndexes: 00000000
       m_Tutorial: {fileID: 0}

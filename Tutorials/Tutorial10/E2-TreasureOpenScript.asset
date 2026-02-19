@@ -21,7 +21,7 @@ MonoBehaviour:
         m_Untranslated: "The script <asset>TreasureOpen</asset> is in charge of triggering
           the cutscene for opening the treasure chest. You can see this script requires
           a <b>PlayableDirector</b> property to be set.\nYou can see the (extremely
-          complicated) code that accomplishes this:\n<code>\nif (inArea AND Input.GetKeyDown(KeyCode.Space))\r\n{\r\n\tdirectorToPlay.Play();\r\n}\n</code>\nBut
+          complicated) code that accomplishes this:\n<code>\nif (inArea AND Keyboard.current.spaceKey.wasPressedThisFrame)\r\n{\r\n\tdirectorToPlay.Play();\r\n}\n</code>\nBut
           what is a \u201Cplayable director\u201D, and how do we get one? A playable
           director is the component which  runs a Unity Timeline (in much the same
           way that an Animator controls an Animation State Controller). Playable

@@ -100,9 +100,9 @@ MonoBehaviour:
         m_Untranslated: 
       Text:
         m_Untranslated: "You should be able to see this extremely basic set up for
-          running an action when the user clicks the mouse:\n<code>\npublic class
+          running an action when the user clicks the mouse:\n<code>\nusing UnityEngine.InputSystem;\n\npublic class
           RaycastAtMouseOnClick : MonoBehaviour\n{\n    void Update()\n    {\n       
-          if (Input.GetMouseButtonDown(0))\n        {\n            //YOU TO-DO: detect
+          if (Mouse.current.leftButton.wasPressedThisFrame)\n        {\n            //YOU TO-DO: detect
           whats under the mouse\n        }\n    }\n}\n\n</code>"
       m_PollItems: []
       m_PollCorrectItemIndexes: 00000000
