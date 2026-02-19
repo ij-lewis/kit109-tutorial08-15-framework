@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f107dc6d4c984c45bdafd3bb15f98f0, type: 3}
+  m_Name: Tutorial12d -- Coroutine Loops
+  m_EditorClassIdentifier: 
+  TutorialTitle:
+    m_Untranslated: Tutorial12d -- Coroutine Loops
+  m_TutorialTitle: 
+  m_LessonId: 1204
+  m_Version: 1
+  m_Scene: {fileID: 102900000, guid: 450b15f7523725240bcd7bbd57fe1684, type: 3}
+  m_OrOpenSceneName: 
+  m_DefaultSceneCameraSettings:
+    m_CameraMode: 0
+    m_FocusMode: 0
+    m_Orthographic: 0
+    m_Size: 0
+    m_Pivot: {x: 0, y: 0, z: 0}
+    m_Rotation: {x: 0, y: 0, z: 0, w: 0}
+    m_FrameObject:
+      m_SceneGuid: 
+      m_GameObjectGuid: 
+      m_SerializedComponentType:
+        m_TypeName: 
+      m_ComponentIndex: 0
+      m_AssetObject: {fileID: 0}
+      m_Prefab: {fileID: 0}
+    m_Enabled: 0
+  m_SkipTutorialBehavior: 0
+  m_WindowLayout: {fileID: 0}
+  m_Pages:
+    m_Items:
+    - {fileID: 11400000, guid: 3b3767aafe2daea4b914a15f89acf4e9, type: 2}
+    - {fileID: 11400000, guid: f67bdaa895fd531489684d72f7b2a7bd, type: 2}
+    - {fileID: 11400000, guid: c670f0ebec838984abec706d772d83c2, type: 2}
+    - {fileID: 11400000, guid: b203bbf5154042449a8ea7b09c42d6a4, type: 2}
+    - {fileID: 11400000, guid: 94738b8e86b6bbd44910d1a670ff8ac0, type: 2}
+    - {fileID: 11400000, guid: f7934682cf96b8d4299a6a72e012dbc7, type: 2}
+    - {fileID: 11400000, guid: efcc19f70e987844ab178df3d5f2035b, type: 2}

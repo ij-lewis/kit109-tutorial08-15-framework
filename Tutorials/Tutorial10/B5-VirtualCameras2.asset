@@ -1,0 +1,148 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff771ccdf4150419d9ff4d342b069aae, type: 3}
+  m_Name: B5-VirtualCameras2
+  m_EditorClassIdentifier: 
+  m_Paragraphs:
+    m_Items:
+    - m_Type: 0
+      Title:
+        m_Untranslated: Cinemachine Virtual Cameras
+      Text:
+        m_Untranslated: As expected, this creates a new 2D camera in the game world.
+          However, upon further inspection of the virtual camera, you will see that
+          it does not use the traditional Camera component. Instead it is using the
+          Cinemachine Virtual Camera component.
+      m_PollItems: []
+      m_PollCorrectItemIndexes: 00000000
+      m_Tutorial: {fileID: 0}
+      m_Image: {fileID: 0}
+      m_Video: {fileID: 0}
+      m_CriteriaCompletion: 0
+      m_Criteria:
+        m_Items: []
+      m_PossibleErrors: []
+      m_MaskingSettings:
+        m_MaskingEnabled: 1
+        m_UnmaskedViews:
+        - m_SelectorType: 1
+          m_ViewType:
+            m_TypeName: 
+          m_EditorWindowType:
+            m_TypeName: UnityEditor.InspectorWindow, UnityEditor.CoreModule, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+          m_AlternateEditorWindowTypes:
+            m_Items: []
+          m_MaskType: 0
+          m_MaskSizeModifier: 0
+          m_UnmaskedControls: []
+      m_Summary: 
+      m_Description: 
+      m_InstructionBoxTitle: 
+      m_InstructionText: 
+      m_TutorialButtonText: 
+      codeBlockText: 
+    - m_Type: 0
+      Title:
+        m_Untranslated: 
+      Text:
+        m_Untranslated: "Cinemachine assigns your main camera to one of many virtual
+          cameras in the scene (and, as we will see, sometimes a combination of more
+          than one). There are plenty of moving parts on the Virtual Camera component,
+          and we will try a number of these throughout the practical (you are encouraged
+          to play around with these settings to understand their effect\u2014once
+          you\u2019ve learnt the basics):\r\n\u2022 The Status of the camera (is
+          it currently being shown), plus a \u201CSolo\u201D button to force the
+          editor to only use this camera temporarily.\r\n\u2022 Toggling the Game
+          Window Guides which are an editor screen overlay which we will cover in
+          detail shortly.\r\n\u2022 Whether or not to Save During Play\u2014you may
+          find yourself fine-tuning or tweaking Cinemachine shots, which is easier
+          to do during play mode. Recall that scene changes don\u2019t save during
+          Play Mode, and this option allows us to override this behavior.\r\n\u2022
+          The Priority of the camera\u2014used to determine which camera to show
+          if multiple cameras meet the criteria for being shown.\r\n\u2022 What game
+          objects to Follow and/or Look At (the former will move the camera with
+          the target, the latter will point the camera at the target)\r\n\u2022 The
+          camera Lens settings for zoom and clipping.\r\n\u2022 Additional settings
+          for how the camera should move (i.e. how should its Body behave, used in
+          conjunction with the Follow target\u2014the specific settings in here will
+          be described in detail later in the practical).\r\n\u2022 Additional settings
+          for how the camera should aim (used in conjunction with the Look At target).\r\n\u2022
+          Additional settings for any additional \u201Cnoise\u201D movement on the
+          camera (think handheld camera movement, used to make shots look more natural
+          and dynamic).\r\n"
+      m_PollItems: []
+      m_PollCorrectItemIndexes: 00000000
+      m_Tutorial: {fileID: 0}
+      m_Image: {fileID: 0}
+      m_Video: {fileID: 0}
+      m_CriteriaCompletion: 0
+      m_Criteria:
+        m_Items: []
+      m_PossibleErrors: []
+      m_MaskingSettings:
+        m_MaskingEnabled: 0
+        m_UnmaskedViews: []
+      m_Summary: 
+      m_Description: 
+      m_InstructionBoxTitle: 
+      m_InstructionText: 
+      m_TutorialButtonText: 
+      codeBlockText: 
+  m_CameraSettings:
+    m_CameraMode: 0
+    m_FocusMode: 0
+    m_Orthographic: 0
+    m_Size: 0
+    m_Pivot: {x: 0, y: 0, z: 0}
+    m_Rotation: {x: 0, y: 0, z: 0, w: 0}
+    m_FrameObject:
+      m_SceneGuid: 
+      m_GameObjectGuid: 
+      m_SerializedComponentType:
+        m_TypeName: 
+      m_ComponentIndex: 0
+      m_AssetObject: {fileID: 0}
+      m_Prefab: {fileID: 0}
+    m_Enabled: 0
+  NextButton:
+    m_Untranslated: Next
+  DoneButton:
+    m_Untranslated: Done
+  m_NextButton: Next
+  m_DoneButton: Done
+  m_CompletedSound: {fileID: 0}
+  m_autoAdvance: 0
+  m_OnBeforePageShown:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 0bbd71a4713de434d8c94e72034b789c, type: 2}
+        m_TargetAssemblyTypeName: CommonTutorialCallbacks, Unity.Tutorials.Core.Editor
+        m_MethodName: SelectGameObject
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: CM vcam1
+          m_BoolArgument: 0
+        m_CallState: 1
+  m_OnAfterPageShown:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnBeforeTutorialQuit:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnTutorialPageStay:
+    m_PersistentCalls:
+      m_Calls: []

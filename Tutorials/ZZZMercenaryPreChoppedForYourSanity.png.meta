@@ -1,0 +1,1546 @@
+fileFormatVersion: 2
+guid: f36b800c3f4fbe246972900930b44734
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Mercenary_0
+  - first:
+      213: 21300002
+    second: Mercenary_1
+  - first:
+      213: 21300004
+    second: Mercenary_2
+  - first:
+      213: 21300006
+    second: Mercenary_3
+  - first:
+      213: 21300008
+    second: Mercenary_4
+  - first:
+      213: 21300010
+    second: Mercenary_5
+  - first:
+      213: 21300012
+    second: Mercenary_6
+  - first:
+      213: 21300014
+    second: Mercenary_7
+  - first:
+      213: 21300016
+    second: Mercenary_8
+  - first:
+      213: 21300018
+    second: Mercenary_9
+  - first:
+      213: 21300020
+    second: Mercenary_10
+  - first:
+      213: 21300022
+    second: Mercenary_11
+  - first:
+      213: 21300024
+    second: Mercenary_12
+  - first:
+      213: 21300026
+    second: Mercenary_13
+  - first:
+      213: 21300028
+    second: Mercenary_14
+  - first:
+      213: 21300030
+    second: Mercenary_15
+  - first:
+      213: 21300032
+    second: Mercenary_16
+  - first:
+      213: 21300034
+    second: Mercenary_17
+  - first:
+      213: 21300036
+    second: Mercenary_18
+  - first:
+      213: 21300038
+    second: Mercenary_19
+  - first:
+      213: 21300040
+    second: Mercenary_20
+  - first:
+      213: 21300042
+    second: Mercenary_21
+  - first:
+      213: 21300044
+    second: Mercenary_22
+  - first:
+      213: 21300046
+    second: Mercenary_23
+  - first:
+      213: 21300048
+    second: Mercenary_24
+  - first:
+      213: 21300050
+    second: Mercenary_25
+  - first:
+      213: 21300052
+    second: Mercenary_26
+  - first:
+      213: 21300054
+    second: Mercenary_27
+  - first:
+      213: 21300056
+    second: Mercenary_28
+  - first:
+      213: 21300058
+    second: Mercenary_29
+  - first:
+      213: 21300060
+    second: Mercenary_30
+  - first:
+      213: 21300062
+    second: Mercenary_31
+  - first:
+      213: 21300064
+    second: Mercenary_32
+  - first:
+      213: 21300066
+    second: Mercenary_33
+  - first:
+      213: 21300068
+    second: Mercenary_34
+  - first:
+      213: 21300070
+    second: Mercenary_35
+  - first:
+      213: 21300072
+    second: Mercenary_36
+  - first:
+      213: 21300074
+    second: Mercenary_37
+  - first:
+      213: 21300076
+    second: Mercenary_38
+  - first:
+      213: 21300078
+    second: Mercenary_39
+  - first:
+      213: 21300080
+    second: Mercenary_40
+  - first:
+      213: 21300082
+    second: Mercenary_41
+  - first:
+      213: 21300084
+    second: Mercenary_42
+  - first:
+      213: 21300086
+    second: Mercenary_43
+  - first:
+      213: 21300088
+    second: Mercenary_44
+  - first:
+      213: 21300090
+    second: Mercenary_45
+  - first:
+      213: 21300092
+    second: Mercenary_46
+  - first:
+      213: 21300094
+    second: Mercenary_47
+  - first:
+      213: 5903905991286055481
+    second: Mercenary_0
+  - first:
+      213: -2717688822470235341
+    second: Mercenary_1
+  - first:
+      213: -4002248859864714991
+    second: Mercenary_2
+  - first:
+      213: -5517257270002997874
+    second: Mercenary_3
+  - first:
+      213: 666028794848276151
+    second: Mercenary_4
+  - first:
+      213: 6693707007442064367
+    second: Mercenary_5
+  - first:
+      213: -7570457619156161522
+    second: Mercenary_6
+  - first:
+      213: -2746505855961383331
+    second: Mercenary_7
+  - first:
+      213: 7585888286153909849
+    second: Mercenary_8
+  - first:
+      213: 6581187367107490908
+    second: Mercenary_9
+  - first:
+      213: -2968835277833123553
+    second: Mercenary_10
+  - first:
+      213: -8582296547018718872
+    second: Mercenary_11
+  - first:
+      213: -6613645987072596261
+    second: Mercenary_12
+  - first:
+      213: 3134110897773191573
+    second: Mercenary_13
+  - first:
+      213: -5746894767478252967
+    second: Mercenary_14
+  - first:
+      213: 8686537042023227958
+    second: Mercenary_15
+  - first:
+      213: -886371264607096024
+    second: Mercenary_16
+  - first:
+      213: 7734515741678840530
+    second: Mercenary_17
+  - first:
+      213: 7519778282503736690
+    second: Mercenary_18
+  - first:
+      213: -5435219765157328696
+    second: Mercenary_19
+  - first:
+      213: -7183581162735803741
+    second: Mercenary_20
+  - first:
+      213: -7375381199919647087
+    second: Mercenary_21
+  - first:
+      213: -8639484972468354086
+    second: Mercenary_22
+  - first:
+      213: -8645012762052586260
+    second: Mercenary_23
+  - first:
+      213: 988667168021749262
+    second: Mercenary_24
+  - first:
+      213: 3936283488278142788
+    second: Mercenary_25
+  - first:
+      213: 8019815660760905966
+    second: Mercenary_26
+  - first:
+      213: 8997900512608775333
+    second: Mercenary_27
+  - first:
+      213: -6945518465954454468
+    second: Mercenary_28
+  - first:
+      213: 6484055416503776988
+    second: Mercenary_29
+  - first:
+      213: 4033203360205387223
+    second: Mercenary_30
+  - first:
+      213: 6958685570293780824
+    second: Mercenary_31
+  - first:
+      213: 2130889135214796303
+    second: Mercenary_32
+  - first:
+      213: 5127425704341451065
+    second: Mercenary_33
+  - first:
+      213: -8195413965691858585
+    second: Mercenary_34
+  - first:
+      213: -72675938470546196
+    second: Mercenary_35
+  - first:
+      213: 511723164115275088
+    second: Mercenary_36
+  - first:
+      213: -623748506690783504
+    second: Mercenary_37
+  - first:
+      213: 8577254454542032212
+    second: Mercenary_38
+  - first:
+      213: 7879979160937031036
+    second: Mercenary_39
+  - first:
+      213: 5346262060937530912
+    second: Mercenary_40
+  - first:
+      213: 2592617740846550166
+    second: Mercenary_41
+  - first:
+      213: 4562362022188209440
+    second: Mercenary_42
+  - first:
+      213: 3680906053317977778
+    second: Mercenary_43
+  - first:
+      213: 8909347849574067610
+    second: Mercenary_44
+  - first:
+      213: -151420835053690178
+    second: Mercenary_45
+  - first:
+      213: -6399836019706467040
+    second: Mercenary_46
+  - first:
+      213: 583660641529356094
+    second: Mercenary_47
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  swizzle: 50462976
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ZZZMercenary_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 166
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1705223c3577a2347ad4eb5293243092
+      internalID: 392273092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZZZMercenary_1
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 166
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 809be45dff735b4448dfea3f48cf697a
+      internalID: -915919641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZZZMercenary_2
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 166
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc6d9c8ccbea6394b918d1bdb62fd5e2
+      internalID: -1117466199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZZZMercenary_3
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 166
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c8bea2d2a4b22c48b2be21c12ab6179
+      internalID: -688324465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZZZMercenary_4
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 166
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fd75f9ddec421a4291ceec4a52c575d
+      internalID: -73399876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZZZMercenary_5
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 166
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be6b2ce0531c7ab429dfa4b5183befc3
+      internalID: -1487017855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZZZMercenary_6
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 166
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22e0451dc95a1c7479db0530e248f91c
+      internalID: 325402507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZZZMercenary_7
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 166
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e6d42fa5118ac9449f0fc051cfa2ffe
+      internalID: -1817390368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZZZMercenary_8
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 133
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f306f282579133445bbc11f554a39666
+      internalID: -1407042630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZZZMercenary_9
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 133
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4beddc19b42883740a0c9156f13bbd39
+      internalID: -740143816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZZZMercenary_10
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 133
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 713dc70f66769fb49be4b752524f9658
+      internalID: -1120419787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZZZMercenary_11
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 133
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0689023fc3bdb8c43b81cc8f8588a084
+      internalID: 1013196491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZZZMercenary_12
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 133
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17d4a8507fef20f4bbb71ae98e75a1e9
+      internalID: -2130363955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZZZMercenary_13
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 133
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c37c24d89e8d3b46a71d86e95984e61
+      internalID: -2065647723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZZZMercenary_14
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 133
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d26bd6275b2df44ca65b03a11a5e523
+      internalID: 150245466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZZZMercenary_15
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 133
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae2e5a631162a24449eaab27ce0caf73
+      internalID: -682364149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mercenary_16
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 100
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4911fca45b5e77349bf7bb08654c93f2
+      internalID: 266734114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mercenary_17
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 100
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f555ee2806ae93c41b1673597b152134
+      internalID: -856374055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mercenary_18
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 100
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1806e8c9e3b0ca54283e3a138d922744
+      internalID: 120189385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mercenary_19
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 100
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f367adc9126399649affaf48d91e94be
+      internalID: -1427359750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mercenary_20
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 100
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ffed62089c649d45b5c1188477ca863
+      internalID: -1671472440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mercenary_21
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 100
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b677123a59b84934e8549d1d395405d4
+      internalID: 602148127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mercenary_22
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 100
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d7f9d45b53c05649af82f71222482ed
+      internalID: -384806132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mercenary_23
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 100
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98f4b5ac8cd899a4b9ff0c74c7c8b694
+      internalID: -1589412378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mercenary_24
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 67
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d3c4b24d861428499b71d342ddb171b
+      internalID: 913600110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mercenary_25
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 67
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d87a1e4d15f4e5b4f8d4e2dc60ab95a9
+      internalID: 446794925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mercenary_26
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 67
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ce411eeb8dbe5b46b76810118053b40
+      internalID: 798563025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mercenary_27
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 67
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69f3d033e39089049a048ebc4a76a97a
+      internalID: -2052724271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mercenary_28
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 67
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c458321baa3d0824a93eb364f749a772
+      internalID: 139602795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mercenary_29
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 67
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 163cf4dab5233cb4289e80c9c56d1f33
+      internalID: 1765688912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mercenary_30
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 67
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 499aeaf6147ba5f47a86151a7f5b7eef
+      internalID: -1362808551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mercenary_31
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 67
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d165585f4f61b44dbc1d2b20ca6eb41
+      internalID: -276269250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mercenary_32
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 34
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce8fd99a37d928e4887d77d3691fcf40
+      internalID: 1139294169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mercenary_33
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 34
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a7f61bc604509242b225a25cc1ce772
+      internalID: -1904111496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mercenary_34
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 34
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87e43a44de6357c4e972f33d86c2db95
+      internalID: 1274637899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mercenary_35
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 34
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8293ef290efd1cd4fad550684890453c
+      internalID: -1690649537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mercenary_36
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 34
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8117e18486c358a43861d388fe24bdeb
+      internalID: -59939560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mercenary_37
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 34
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b74a44761e8420f4d968d7732848b2d8
+      internalID: -1961891171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mercenary_38
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 34
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4b531ca8965a4e44bc73373a373d57d
+      internalID: 228522964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mercenary_39
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 34
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 193fc3b06eb75a844b975769693f3c10
+      internalID: -912899239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mercenary_40
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac88db53a7121304498b20339d110f97
+      internalID: -248014331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mercenary_41
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f5a8beeb26e7ff499cdc009467cfbae
+      internalID: -705406975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mercenary_42
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ada2a53fa0753e246882bac807cece6d
+      internalID: 811628246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mercenary_43
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9f74b10e763ebc42be68a676c6bbb93
+      internalID: -450920898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mercenary_44
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52f663078275318459b9f62dfcac320f
+      internalID: -1584652817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mercenary_45
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f089dc83b0a8654aa4cf4ce48b866b3
+      internalID: -936872672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mercenary_46
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f322ea506da2ab14b8f2c19cabef11b7
+      internalID: 595231128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mercenary_47
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5db7fc8f0da22444dbbb55d1b6aaec7e
+      internalID: 549166747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Mercenary_16: 266734114
+      Mercenary_17: -856374055
+      Mercenary_18: 120189385
+      Mercenary_19: -1427359750
+      Mercenary_20: -1671472440
+      Mercenary_21: 602148127
+      Mercenary_22: -384806132
+      Mercenary_23: -1589412378
+      Mercenary_24: 913600110
+      Mercenary_25: 446794925
+      Mercenary_26: 798563025
+      Mercenary_27: -2052724271
+      Mercenary_28: 139602795
+      Mercenary_29: 1765688912
+      Mercenary_30: -1362808551
+      Mercenary_31: -276269250
+      Mercenary_32: 1139294169
+      Mercenary_33: -1904111496
+      Mercenary_34: 1274637899
+      Mercenary_35: -1690649537
+      Mercenary_36: -59939560
+      Mercenary_37: -1961891171
+      Mercenary_38: 228522964
+      Mercenary_39: -912899239
+      Mercenary_40: -248014331
+      Mercenary_41: -705406975
+      Mercenary_42: 811628246
+      Mercenary_43: -450920898
+      Mercenary_44: -1584652817
+      Mercenary_45: -936872672
+      Mercenary_46: 595231128
+      Mercenary_47: 549166747
+      ZZZMercenary_0: 392273092
+      ZZZMercenary_1: -915919641
+      ZZZMercenary_10: -1120419787
+      ZZZMercenary_11: 1013196491
+      ZZZMercenary_12: -2130363955
+      ZZZMercenary_13: -2065647723
+      ZZZMercenary_14: 150245466
+      ZZZMercenary_15: -682364149
+      ZZZMercenary_2: -1117466199
+      ZZZMercenary_3: -688324465
+      ZZZMercenary_4: -73399876
+      ZZZMercenary_5: -1487017855
+      ZZZMercenary_6: 325402507
+      ZZZMercenary_7: -1817390368
+      ZZZMercenary_8: -1407042630
+      ZZZMercenary_9: -740143816
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

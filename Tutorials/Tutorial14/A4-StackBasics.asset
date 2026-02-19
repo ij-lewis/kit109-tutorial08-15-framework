@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff771ccdf4150419d9ff4d342b069aae, type: 3}
+  m_Name: A4-StackBasics
+  m_EditorClassIdentifier: 
+  m_Paragraphs:
+    m_Items:
+    - m_Type: 0
+      Title:
+        m_Untranslated: Post Processing Stack Basics
+      Text:
+        m_Untranslated: "The Post Processing Stack relies on a few components which
+          work together to allow you to apply different effects at different parts
+          of the game\r\n\u2022 <b>Post Processing Effect Modules</b>: there is a
+          module for each of the different effect you may wish to use (bloom, motion
+          blur, vignette, etc). You can even write your own modules. Modules are
+          enabled as part of a Post Processing Profile. You can see a list of effects
+          here: <a>https://docs.unity3d.com/Manual/PostProcessingOverview.html#effect-availability-and-location</a>\r\n\u2022
+          <b>Post Processing Profile</b> assets: stored in the project as assets,
+          a profile lists a combination of effect modules, and the parameters to
+          each of those effects (e.g. how intense is the motion blur, what colour
+          is the vignette).\r\n\u2022 <b>Post Processing Layer</b>: A component which
+          must be placed on the same object as the camera you want to effect, the
+          post processing layer applies various Post Processing Profiles to the camera
+          in order to apply the actual effects. The Layer looks at the Post Processing
+          Volumes in the scene on the specified Unity Layer to determine which Profile
+          to apply. More info: <a>http://docs.unity3d.com/Packages/com.unity.postprocessing@3.1/manual/Quick-start.html#post-process-layer</a>\r\n\u2022
+          <b>Post Processing Volume</b>: Attached to game objects in a scene, has
+          a linked Post Processing Profile. When set to global, the Post Processing
+          Layer will apply the linked Profile to the camera. Otherwise, if the Layer\u2019s
+          \u201CTrigger\u201D object (usually the camera or the player) is within
+          the collider of the Post Processing Volume, the Layer will apply the linked
+          Profile. Volumes also have priority values (to resolve clashes), and support
+          blending in effects. Multiple volumes can be applied at once (so you can
+          have a global effect, and add an additional effect in certain areas of
+          the level). More info: <a>http://docs.unity3d.com/Packages/com.unity.postprocessing@3.1/manual/Quick-start.html#post-process-volume</a>"
+      m_PollItems: []
+      m_PollCorrectItemIndexes: 00000000
+      m_Tutorial: {fileID: 0}
+      m_Image: {fileID: 0}
+      disableImagePopup: 0
+      m_Video: {fileID: 0}
+      m_CriteriaCompletion: 0
+      m_Criteria:
+        m_Items: []
+      m_PossibleErrors: []
+      m_MaskingSettings:
+        m_MaskingEnabled: 0
+        m_UnmaskedViews: []
+      m_Summary: 
+      m_Description: 
+      m_InstructionBoxTitle: 
+      m_InstructionText: 
+      m_TutorialButtonText: 
+      codeBlockText: 
+  m_CameraSettings:
+    m_CameraMode: 0
+    m_FocusMode: 0
+    m_Orthographic: 0
+    m_Size: 0
+    m_Pivot: {x: 0, y: 0, z: 0}
+    m_Rotation: {x: 0, y: 0, z: 0, w: 0}
+    m_FrameObject:
+      m_SceneGuid: 
+      m_GameObjectGuid: 
+      m_SerializedComponentType:
+        m_TypeName: 
+      m_ComponentIndex: 0
+      m_AssetObject: {fileID: 0}
+      m_Prefab: {fileID: 0}
+    m_Enabled: 0
+  NextButton:
+    m_Untranslated: Next
+  DoneButton:
+    m_Untranslated: Done
+  m_NextButton: Next
+  m_DoneButton: Done
+  m_CompletedSound: {fileID: 0}
+  m_autoAdvance: 0
+  m_OnBeforePageShown:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnAfterPageShown:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnBeforeTutorialQuit:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnTutorialPageStay:
+    m_PersistentCalls:
+      m_Calls: []

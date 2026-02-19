@@ -1,0 +1,358 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5901213974390905832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7231e8df50e16c74c979c4a2affab91b, type: 3}
+  m_Name: ArbitraryCriterion
+  m_EditorClassIdentifier: 
+  m_Callback:
+    _target: {fileID: 11400000, guid: d4bb521d093039441a81053d20c98975, type: 2}
+    _methodName: DoesScriptContainField
+    _args:
+    - boolValue: 0
+      intValue: 0
+      floatValue: 0
+      stringValue: Player
+      objectValue: {fileID: 0}
+      argType: 4
+    - boolValue: 0
+      intValue: 0
+      floatValue: 0
+      stringValue: RaycastWithinCircle
+      objectValue: {fileID: 0}
+      argType: 4
+    - boolValue: 0
+      intValue: 0
+      floatValue: 0
+      stringValue: collidersNearMe
+      objectValue: {fileID: 0}
+      argType: 4
+    - boolValue: 0
+      intValue: 0
+      floatValue: 0
+      stringValue: UnityEngine.Collider2D[]
+      objectValue: {fileID: 0}
+      argType: 4
+    _dynamic: 0
+    _typeName: Unity.Tutorials.Core.Editor.ArbitraryCriterion+BoolCallback, Unity.Tutorials.Core.Editor,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    dirty: 0
+  m_AutoCompleteCallback:
+    _target: {fileID: 0}
+    _methodName: 
+    _args: []
+    _dynamic: 0
+    _typeName: Unity.Tutorials.Core.Editor.ArbitraryCriterion+BoolCallback, Unity.Tutorials.Core.Editor,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    dirty: 0
+--- !u!114 &-4858894531480923480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7231e8df50e16c74c979c4a2affab91b, type: 3}
+  m_Name: ArbitraryCriterion
+  m_EditorClassIdentifier: 
+  m_Callback:
+    _target: {fileID: 11400000, guid: d4bb521d093039441a81053d20c98975, type: 2}
+    _methodName: DoesScriptContainMethod
+    _args:
+    - boolValue: 0
+      intValue: 0
+      floatValue: 0
+      stringValue: Player
+      objectValue: {fileID: 0}
+      argType: 4
+    - boolValue: 0
+      intValue: 0
+      floatValue: 0
+      stringValue: RaycastWithinCircle
+      objectValue: {fileID: 0}
+      argType: 4
+    - boolValue: 0
+      intValue: 0
+      floatValue: 0
+      stringValue: Start
+      objectValue: {fileID: 0}
+      argType: 4
+    _dynamic: 0
+    _typeName: Unity.Tutorials.Core.Editor.ArbitraryCriterion+BoolCallback, Unity.Tutorials.Core.Editor,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    dirty: 0
+  m_AutoCompleteCallback:
+    _target: {fileID: 0}
+    _methodName: 
+    _args: []
+    _dynamic: 0
+    _typeName: Unity.Tutorials.Core.Editor.ArbitraryCriterion+BoolCallback, Unity.Tutorials.Core.Editor,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    dirty: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff771ccdf4150419d9ff4d342b069aae, type: 3}
+  m_Name: E2-Efficiency
+  m_EditorClassIdentifier: 
+  m_Paragraphs:
+    m_Items:
+    - m_Type: 0
+      Title:
+        m_Untranslated: Improving Efficiency
+      Text:
+        m_Untranslated: "All of the functions we have used so far have returned new
+          arrays of colliders or hits. Allocating a new array to store this information
+          every frame can have a dramatic impact on performance. We can improve the
+          performance of the code at the cost of a little up-front memory allocation.\r\nAll
+          of the <c>Physics2D</c> query functions have a version with the phrase
+          <c>NonAlloc</c> attached to the end. This indicates that the function doesn\u2019t
+          allocate memory\u2014rather it expects an already allocated array to be
+          passed in. This allows us to control when the allocation happens, and in
+          general the best time to do this is in the <c>Start</c> function (/in the
+          member variable definition).\r\nWe will add two new public variables that
+          are needed to facilitate the <c>NonAlloc</c> raycasting functions. Note
+          that normallly you wouldn't make these public (as we won't be linking or
+          setting anything in the Unity inspector), but we're doing so for debugging
+          purposes (so that you can easily see the contents of the array)."
+      m_PollItems: []
+      m_PollCorrectItemIndexes: 00000000
+      m_Tutorial: {fileID: 0}
+      m_Image: {fileID: 0}
+      m_Video: {fileID: 0}
+      m_CriteriaCompletion: 0
+      m_Criteria:
+        m_Items: []
+      m_PossibleErrors: []
+      m_MaskingSettings:
+        m_MaskingEnabled: 0
+        m_UnmaskedViews: []
+      m_Summary: 
+      m_Description: 
+      m_InstructionBoxTitle: 
+      m_InstructionText: 
+      m_TutorialButtonText: 
+      codeBlockText: 
+    - m_Type: 1
+      Title:
+        m_Untranslated: Add a collidersNearMe Public Variable to RaycastWithinCircle
+      Text:
+        m_Untranslated: '<code>public Collider2D[] collidersNearMe;</code>
+
+          This
+          array will store the colliders that we hit.'
+      m_PollItems: []
+      m_PollCorrectItemIndexes: 00000000
+      m_Tutorial: {fileID: 0}
+      m_Image: {fileID: 0}
+      m_Video: {fileID: 0}
+      m_CriteriaCompletion: 0
+      m_Criteria:
+        m_Items:
+        - Type:
+            m_TypeName: Unity.Tutorials.Core.Editor.ArbitraryCriterion, Unity.Tutorials.Core.Editor,
+              Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+          Criterion: {fileID: -5901213974390905832}
+      m_PossibleErrors: []
+      m_MaskingSettings:
+        m_MaskingEnabled: 0
+        m_UnmaskedViews: []
+      m_Summary: 
+      m_Description: 
+      m_InstructionBoxTitle: 
+      m_InstructionText: 
+      m_TutorialButtonText: 
+      codeBlockText: 
+    - m_Type: 1
+      Title:
+        m_Untranslated: Add a numberOfCollidersNearMe  Public Variable to RaycastWithinCircle
+      Text:
+        m_Untranslated: '<code>public int numberOfCollidersNearMe;</code>
+
+          This
+          will store the number of colliders currently within the circle (which will
+          be less than or equal to the length of <c>collidersNearMe</c>).'
+      m_PollItems: []
+      m_PollCorrectItemIndexes: 00000000
+      m_Tutorial: {fileID: 0}
+      m_Image: {fileID: 0}
+      m_Video: {fileID: 0}
+      m_CriteriaCompletion: 0
+      m_Criteria:
+        m_Items:
+        - Type:
+            m_TypeName: Unity.Tutorials.Core.Editor.ArbitraryCriterion, Unity.Tutorials.Core.Editor,
+              Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+          Criterion: {fileID: 6563649188658393282}
+      m_PossibleErrors: []
+      m_MaskingSettings:
+        m_MaskingEnabled: 0
+        m_UnmaskedViews: []
+      m_Summary: 
+      m_Description: 
+      m_InstructionBoxTitle: 
+      m_InstructionText: 
+      m_TutorialButtonText: 
+      codeBlockText: 
+    - m_Type: 1
+      Title:
+        m_Untranslated: Add this Start Function to RaycastWithinCircle
+      Text:
+        m_Untranslated: "<code>\nvoid Start()\n{\n\tcollidersNearMe = new Collider2D[5];\n}\n</code>\nThis
+          code <i>allocates</i> enough memory to store up to 5 current colliders."
+      m_PollItems: []
+      m_PollCorrectItemIndexes: 00000000
+      m_Tutorial: {fileID: 0}
+      m_Image: {fileID: 0}
+      m_Video: {fileID: 0}
+      m_CriteriaCompletion: 0
+      m_Criteria:
+        m_Items:
+        - Type:
+            m_TypeName: Unity.Tutorials.Core.Editor.ArbitraryCriterion, Unity.Tutorials.Core.Editor,
+              Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+          Criterion: {fileID: -4858894531480923480}
+      m_PossibleErrors: []
+      m_MaskingSettings:
+        m_MaskingEnabled: 0
+        m_UnmaskedViews: []
+      m_Summary: 
+      m_Description: 
+      m_InstructionBoxTitle: 
+      m_InstructionText: 
+      m_TutorialButtonText: 
+      codeBlockText: 
+    - m_Type: 0
+      Title:
+        m_Untranslated: 
+      Text:
+        m_Untranslated: "Notice the length of <c>5</c> used in the <c>Start</c> initialization.
+          We have to specify a length for our array\u2014it cannot grow or shrink
+          each frame as the number of hits, so we need to come up with a number representing
+          the maximum number colliders we think the OverlapCircle function will find.
+          Depending on the game, you may set this to the maximum number of enemies
+          that can be in a level at any time, or some arbitrarily large number (keeping
+          in mind that larger numbers will have an impact on the RAM usage of your
+          game). <i>If the raycast returns more colliders than what fits in the array,
+          the additional colliders will not be returned by the function.</i>"
+      m_PollItems: []
+      m_PollCorrectItemIndexes: 00000000
+      m_Tutorial: {fileID: 0}
+      m_Image: {fileID: 0}
+      m_Video: {fileID: 0}
+      m_CriteriaCompletion: 0
+      m_Criteria:
+        m_Items: []
+      m_PossibleErrors: []
+      m_MaskingSettings:
+        m_MaskingEnabled: 0
+        m_UnmaskedViews: []
+      m_Summary: 
+      m_Description: 
+      m_InstructionBoxTitle: 
+      m_InstructionText: 
+      m_TutorialButtonText: 
+      codeBlockText: 
+  m_CameraSettings:
+    m_CameraMode: 0
+    m_FocusMode: 0
+    m_Orthographic: 0
+    m_Size: 0
+    m_Pivot: {x: 0, y: 0, z: 0}
+    m_Rotation: {x: 0, y: 0, z: 0, w: 0}
+    m_FrameObject:
+      m_SceneGuid: 
+      m_GameObjectGuid: 
+      m_SerializedComponentType:
+        m_TypeName: 
+      m_ComponentIndex: 0
+      m_AssetObject: {fileID: 0}
+      m_Prefab: {fileID: 0}
+    m_Enabled: 0
+  NextButton:
+    m_Untranslated: Next
+  DoneButton:
+    m_Untranslated: Done
+  m_NextButton: Next
+  m_DoneButton: Done
+  m_CompletedSound: {fileID: 0}
+  m_autoAdvance: 0
+  m_OnBeforePageShown:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnAfterPageShown:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnBeforeTutorialQuit:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnTutorialPageStay:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &6563649188658393282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7231e8df50e16c74c979c4a2affab91b, type: 3}
+  m_Name: ArbitraryCriterion
+  m_EditorClassIdentifier: 
+  m_Callback:
+    _target: {fileID: 11400000, guid: d4bb521d093039441a81053d20c98975, type: 2}
+    _methodName: DoesScriptContainField
+    _args:
+    - boolValue: 0
+      intValue: 0
+      floatValue: 0
+      stringValue: Player
+      objectValue: {fileID: 0}
+      argType: 4
+    - boolValue: 0
+      intValue: 0
+      floatValue: 0
+      stringValue: RaycastWithinCircle
+      objectValue: {fileID: 0}
+      argType: 4
+    - boolValue: 0
+      intValue: 0
+      floatValue: 0
+      stringValue: numberOfCollidersNearMe
+      objectValue: {fileID: 0}
+      argType: 4
+    - boolValue: 0
+      intValue: 0
+      floatValue: 0
+      stringValue: System.Int32
+      objectValue: {fileID: 0}
+      argType: 4
+    _dynamic: 0
+    _typeName: Unity.Tutorials.Core.Editor.ArbitraryCriterion+BoolCallback, Unity.Tutorials.Core.Editor,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    dirty: 0
+  m_AutoCompleteCallback:
+    _target: {fileID: 0}
+    _methodName: 
+    _args: []
+    _dynamic: 0
+    _typeName: Unity.Tutorials.Core.Editor.ArbitraryCriterion+BoolCallback, Unity.Tutorials.Core.Editor,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    dirty: 0

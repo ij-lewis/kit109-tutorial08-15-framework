@@ -1,0 +1,871 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89305aa391d1c5141bbe1628d930a2c5, type: 3}
+  m_Name: Tutorials
+  m_EditorClassIdentifier: 
+  HeaderBackground: {fileID: 2800000, guid: adc1e3df3f467c34cb47f573ffd2293e, type: 3}
+  Title:
+    m_Untranslated: KIT109 Tutorials 8 to 15
+  Subtitle:
+    m_Untranslated: University of Tasmania
+  Description:
+    m_Untranslated: 
+  ProjectLayout: {fileID: 0}
+  currentTutorialSystemVersion: 1
+  currentTutorialContentVersion: 3
+  guildID: 1336888958734569616
+  tutorialID: tutorial815
+  tabNames:
+  - Tute 8
+  - Tute 9
+  - Tute 10
+  - Tute 11
+  - Tute 12
+  - Tute 13
+  - Tute 14
+  - Tute 15
+  tabTooltips:
+  - Blendtrees and Player Input
+  - Tilemaps
+  - Cinemachine
+  - Simple AI Behaviours
+  - Coroutines, Arrays, and Random
+  - Trails and Particles
+  - Post Processing
+  - Raycasting
+  basePackages:
+  - {fileID: 102900000, guid: 73bac34daf33287469a17ceda7a7dcd6, type: 3}
+  - {fileID: 102900000, guid: 67569c03867f4f843b2fa24526467514, type: 3}
+  - {fileID: 102900000, guid: a59df948aa441a04ba7acbc75dc3f153, type: 3}
+  - {fileID: 102900000, guid: fc040bcdebd81584fad69ddfddbea9f5, type: 3}
+  - {fileID: 102900000, guid: e3855fd7c018b054f8640036c1fc66bb, type: 3}
+  - {fileID: 102900000, guid: f4289a3540274bc42b4e336e3755e1e4, type: 3}
+  - {fileID: 102900000, guid: f4289a3540274bc42b4e336e3755e1e4, type: 3}
+  - {fileID: 102900000, guid: f4289a3540274bc42b4e336e3755e1e4, type: 3}
+  - {fileID: 102900000, guid: f4289a3540274bc42b4e336e3755e1e4, type: 3}
+  Sections:
+  - kit109Tutorial: 0
+    Heading:
+      m_Untranslated: Introduction
+    Text:
+      m_Untranslated: Explore the base project.
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 2a99f0847aaffec47b855bf1f2ceacf1, type: 3}
+    IndexOfPrereqSection: -1
+    Tutorial: {fileID: 11400000, guid: cd5486e8ec827c348a5f4a00f231ab5f, type: 2}
+  - kit109Tutorial: 0
+    Heading:
+      m_Untranslated: Multi-directional Animation
+    Text:
+      m_Untranslated: Set up the Spritesheet and Animations for a top-down RPG character.
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 2a99f0847aaffec47b855bf1f2ceacf1, type: 3}
+    IndexOfPrereqSection: 0
+    Tutorial: {fileID: 11400000, guid: d265d543d9ce14746b40d4f2aaab4f37, type: 2}
+  - kit109Tutorial: 0
+    Heading:
+      m_Untranslated: Blendtrees
+    Text:
+      m_Untranslated: Set up an Animation Controller for our RPG character using
+        Blendtrees.
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 2a99f0847aaffec47b855bf1f2ceacf1, type: 3}
+    IndexOfPrereqSection: 1
+    Tutorial: {fileID: 11400000, guid: 6d66887487aefcf49ba61d1621a8246a, type: 2}
+  - kit109Tutorial: 0
+    Heading:
+      m_Untranslated: Using Blendtrees
+    Text:
+      m_Untranslated: Put the Blendtree to use on a Player object in the scene.
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 2a99f0847aaffec47b855bf1f2ceacf1, type: 3}
+    IndexOfPrereqSection: 2
+    Tutorial: {fileID: 11400000, guid: 66a75543f65521c48a43cfca08cf26c9, type: 2}
+  - kit109Tutorial: 0
+    Heading:
+      m_Untranslated: Scripting Blendtrees
+    Text:
+      m_Untranslated: Fix up the Player Shooting by learning how to code with Blendtrees!
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 2a99f0847aaffec47b855bf1f2ceacf1, type: 3}
+    IndexOfPrereqSection: 3
+    Tutorial: {fileID: 11400000, guid: 3b3fdff5016057e46be6bd76840450c0, type: 2}
+  - kit109Tutorial: 0
+    Heading:
+      m_Untranslated: Exercise
+    Text:
+      m_Untranslated: Complete this to get marked off for this tutorial.
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: da615a7ab29fd944d94c2cb73e1b98d3, type: 3}
+    IndexOfPrereqSection: -1
+    Tutorial: {fileID: 11400000, guid: 9f0d9d1bc8e27b740a2dd0a532dba1d4, type: 2}
+  - kit109Tutorial: 0
+    Heading:
+      m_Untranslated: Homework and Resources
+    Text:
+      m_Untranslated: Further reading and useful information.
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: b3742cd59b62a25488810a1806c0aec2, type: 3}
+    IndexOfPrereqSection: -1
+    Tutorial: {fileID: 11400000, guid: a488489bed547f54b97be42a98de1408, type: 2}
+  - kit109Tutorial: 0
+    Heading:
+      m_Untranslated: MyLO Quiz 8
+    Text:
+      m_Untranslated: Blendtrees and Player Input
+    Metadata: 
+    Url: https://mylo.utas.edu.au/d2l/le/content/691741/viewContent/5791218/View
+    Image: {fileID: 2800000, guid: f1b9caa53ea0e4d44bc3fba0aa501c60, type: 3}
+    IndexOfPrereqSection: -1
+    Tutorial: {fileID: 0}
+  - kit109Tutorial: 1
+    Heading:
+      m_Untranslated: Introduction
+    Text:
+      m_Untranslated: Explore the base project.
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 746c0f92f0243424daa8514c86659817, type: 3}
+    IndexOfPrereqSection: -1
+    Tutorial: {fileID: 11400000, guid: d37a94a7d60645d419d04851ba68f7e8, type: 2}
+  - kit109Tutorial: 1
+    Heading:
+      m_Untranslated: Tile Palette
+    Text:
+      m_Untranslated: Import some tilemaps and set up your Tile Palette for painting
+        into the scene!
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 746c0f92f0243424daa8514c86659817, type: 3}
+    IndexOfPrereqSection: 0
+    Tutorial: {fileID: 11400000, guid: 0556c283b04d832439bbb0446586a90a, type: 2}
+  - kit109Tutorial: 1
+    Heading:
+      m_Untranslated: Painting Tiles
+    Text:
+      m_Untranslated: Add a Tilemap to your scene and paint the dungeon level of
+        your dreams!
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 746c0f92f0243424daa8514c86659817, type: 3}
+    IndexOfPrereqSection: 1
+    Tutorial: {fileID: 11400000, guid: 9ceded5c580abfc4097c0a9c15dc48db, type: 2}
+  - kit109Tutorial: 1
+    Heading:
+      m_Untranslated: Tilemap Colliders
+    Text:
+      m_Untranslated: Make it so the player can crash into the walls of your mega
+        dungeon!
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 746c0f92f0243424daa8514c86659817, type: 3}
+    IndexOfPrereqSection: 2
+    Tutorial: {fileID: 11400000, guid: 18bbcdce53d56304bb0197a56633be6a, type: 2}
+  - kit109Tutorial: 1
+    Heading:
+      m_Untranslated: Painting Random Tiles
+    Text:
+      m_Untranslated: Use the Random Brush Plugin to add variation to your world.
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 746c0f92f0243424daa8514c86659817, type: 3}
+    IndexOfPrereqSection: 3
+    Tutorial: {fileID: 11400000, guid: 3af547c648ad9d04395c89baa4cfa5ef, type: 2}
+  - kit109Tutorial: 1
+    Heading:
+      m_Untranslated: Scriptable Tiles
+    Text:
+      m_Untranslated: Try out the Animated Tile and Rule Tiles
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 746c0f92f0243424daa8514c86659817, type: 3}
+    IndexOfPrereqSection: 4
+    Tutorial: {fileID: 11400000, guid: 9d096a7bd88ab6c4fa11da040b8e462e, type: 2}
+  - kit109Tutorial: 1
+    Heading:
+      m_Untranslated: Exercise
+    Text:
+      m_Untranslated: Complete this to get marked off for this tutorial.
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: da615a7ab29fd944d94c2cb73e1b98d3, type: 3}
+    IndexOfPrereqSection: -1
+    Tutorial: {fileID: 11400000, guid: 1eeb50c3e021d214694ffb1827fdf85a, type: 2}
+  - kit109Tutorial: 1
+    Heading:
+      m_Untranslated: Homework and Resources
+    Text:
+      m_Untranslated: Further reading and useful information.
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: b3742cd59b62a25488810a1806c0aec2, type: 3}
+    IndexOfPrereqSection: -1
+    Tutorial: {fileID: 11400000, guid: c1706869a96bef546b7daee22862013a, type: 2}
+  - kit109Tutorial: 1
+    Heading:
+      m_Untranslated: MyLO Quiz 9
+    Text:
+      m_Untranslated: Tilemaps
+    Metadata: 
+    Url: https://mylo.utas.edu.au/d2l/le/content/691741/viewContent/5791219/View
+    Image: {fileID: 2800000, guid: f1b9caa53ea0e4d44bc3fba0aa501c60, type: 3}
+    IndexOfPrereqSection: -1
+    Tutorial: {fileID: 0}
+  - kit109Tutorial: 2
+    Heading:
+      m_Untranslated: Introduction
+    Text:
+      m_Untranslated: Explore the base project.
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 29621949b2cd7a843aed1af7e7a5cc11, type: 3}
+    IndexOfPrereqSection: -1
+    Tutorial: {fileID: 11400000, guid: e4a189ad2860dd4499b3c4878dd440ce, type: 2}
+  - kit109Tutorial: 2
+    Heading:
+      m_Untranslated: Cinemachine Basics
+    Text:
+      m_Untranslated: Make the camera follow the player around using Cinemachine
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 7fa4d1960d5b7414eb3cf512b5d106fe, type: 3}
+    IndexOfPrereqSection: 0
+    Tutorial: {fileID: 11400000, guid: 9a80d04ee7041cc49b2e1d430a573ec3, type: 2}
+  - kit109Tutorial: 2
+    Heading:
+      m_Untranslated: Deadzones and Softzones
+    Text:
+      m_Untranslated: Tweak the camera to get the perfect feel using Cinemachine
+        settings.
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 15cd2d27b0814d14fa499e3ca11a96b7, type: 3}
+    IndexOfPrereqSection: 1
+    Tutorial: {fileID: 11400000, guid: af78c984a7b8028499295218ec723c99, type: 2}
+  - kit109Tutorial: 2
+    Heading:
+      m_Untranslated: Bounding the Camera
+    Text:
+      m_Untranslated: Stop the camera from seeing things you don't want it to see
+        by adding bounds.
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 9762527a1ad9b9e4894afdac76fd4d3c, type: 3}
+    IndexOfPrereqSection: 2
+    Tutorial: {fileID: 11400000, guid: 86017f68bd6eba144acb60cf4cfaa96c, type: 2}
+  - kit109Tutorial: 2
+    Heading:
+      m_Untranslated: Timeline
+    Text:
+      m_Untranslated: Create a basic cutscene using a Cinemachine Camera controlled
+        by Timeline
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: cc1993bad0e6e6648b06b0b0bfe57864, type: 3}
+    IndexOfPrereqSection: 3
+    Tutorial: {fileID: 11400000, guid: 024a32645996be941af7c76a82659eb7, type: 2}
+  - kit109Tutorial: 2
+    Heading:
+      m_Untranslated: Camera Blending, Noise, and Animation Shots
+    Text:
+      m_Untranslated: Make the cutscene more interesting with a moving camera, and
+        a bit of camera shake!
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 473e6dfc234309f4cb4a037d74836271, type: 3}
+    IndexOfPrereqSection: 4
+    Tutorial: {fileID: 11400000, guid: 090f7a2692111dd4a88e1f0ebb90c75b, type: 2}
+  - kit109Tutorial: 2
+    Heading:
+      m_Untranslated: Dolly Cameras
+    Text:
+      m_Untranslated: Try out a different style of camera, where it is attached to
+        a track, but still follows the player.
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 5e1cb1bf6aabc014c999f95e5a8e6d57, type: 3}
+    IndexOfPrereqSection: 5
+    Tutorial: {fileID: 11400000, guid: 4d3e9667f1a14b641b9c2c482ea170c6, type: 2}
+  - kit109Tutorial: 2
+    Heading:
+      m_Untranslated: Target Group Cameras
+    Text:
+      m_Untranslated: Make a Party-Golf-esk camera using the Target Group camera.
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 5e1cb1bf6aabc014c999f95e5a8e6d57, type: 3}
+    IndexOfPrereqSection: 6
+    Tutorial: {fileID: 11400000, guid: eac9f237802e7ab498fccd85d9c2c827, type: 2}
+  - kit109Tutorial: 2
+    Heading:
+      m_Untranslated: Exercise
+    Text:
+      m_Untranslated: Complete this to get marked off for this tutorial.
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: da615a7ab29fd944d94c2cb73e1b98d3, type: 3}
+    IndexOfPrereqSection: -1
+    Tutorial: {fileID: 11400000, guid: 96bfd08d9991a824e9673eb1d8c2daf5, type: 2}
+  - kit109Tutorial: 2
+    Heading:
+      m_Untranslated: Homework and Resources
+    Text:
+      m_Untranslated: Further reading and useful information.
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: b3742cd59b62a25488810a1806c0aec2, type: 3}
+    IndexOfPrereqSection: -1
+    Tutorial: {fileID: 11400000, guid: 3dc70b5340131154bb8eecad57b4000b, type: 2}
+  - kit109Tutorial: 2
+    Heading:
+      m_Untranslated: MyLO Quiz 10
+    Text:
+      m_Untranslated: Cinemachine
+    Metadata: 
+    Url: https://mylo.utas.edu.au/d2l/le/content/691741/viewContent/5791220/View
+    Image: {fileID: 2800000, guid: f1b9caa53ea0e4d44bc3fba0aa501c60, type: 3}
+    IndexOfPrereqSection: -1
+    Tutorial: {fileID: 0}
+  - kit109Tutorial: 3
+    Heading:
+      m_Untranslated: Introduction
+    Text:
+      m_Untranslated: Explore the base project and understand the basics of AI movement.
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 2a99f0847aaffec47b855bf1f2ceacf1, type: 3}
+    IndexOfPrereqSection: -1
+    Tutorial: {fileID: 11400000, guid: d33967ba73c1b89488a7b09f6574a909, type: 2}
+  - kit109Tutorial: 3
+    Heading:
+      m_Untranslated: Seeking Behaviours
+    Text:
+      m_Untranslated: 'Make your enemies follow the player using the simplest AI
+        behaviour: seeking!'
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 2a99f0847aaffec47b855bf1f2ceacf1, type: 3}
+    IndexOfPrereqSection: 0
+    Tutorial: {fileID: 11400000, guid: 8ad758e33c900184bab16818f7dd1c8f, type: 2}
+  - kit109Tutorial: 3
+    Heading:
+      m_Untranslated: Fleeing Behaviours
+    Text:
+      m_Untranslated: Make your enemies scared of the player using fleeing behaviour!
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 2a99f0847aaffec47b855bf1f2ceacf1, type: 3}
+    IndexOfPrereqSection: 1
+    Tutorial: {fileID: 11400000, guid: 6e453b1a1b36c204e85bf834f60d2c40, type: 2}
+  - kit109Tutorial: 3
+    Heading:
+      m_Untranslated: Pursuing Behaviours
+    Text:
+      m_Untranslated: Make your enemies harder to avoid by improving their seeking
+        behaviour to be a pursuit behaviour!
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 2a99f0847aaffec47b855bf1f2ceacf1, type: 3}
+    IndexOfPrereqSection: 2
+    Tutorial: {fileID: 11400000, guid: 52d818b024e86724ba826bdddfc62e0d, type: 2}
+  - kit109Tutorial: 3
+    Heading:
+      m_Untranslated: Wandering Behaviours
+    Text:
+      m_Untranslated: Let your enemies randomly wander around when they're not trying
+        to kill you :)
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 2a99f0847aaffec47b855bf1f2ceacf1, type: 3}
+    IndexOfPrereqSection: 3
+    Tutorial: {fileID: 11400000, guid: f1d8fa59ab4f5bb49b62dd2fb23e3b18, type: 2}
+  - kit109Tutorial: 3
+    Heading:
+      m_Untranslated: Behaviour States
+    Text:
+      m_Untranslated: Put all the behaviours together into a single "smarter" AI
+        enemy using the Animator Controller.
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 2a99f0847aaffec47b855bf1f2ceacf1, type: 3}
+    IndexOfPrereqSection: 4
+    Tutorial: {fileID: 11400000, guid: 70c069d3164b5a443a557f14b01b1d41, type: 2}
+  - kit109Tutorial: 3
+    Heading:
+      m_Untranslated: Pathfinding Using A*
+    Text:
+      m_Untranslated: Give your enemies the ability to navigate the world, by adding
+        an A* search algorithm to them.
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 2a99f0847aaffec47b855bf1f2ceacf1, type: 3}
+    IndexOfPrereqSection: 5
+    Tutorial: {fileID: 11400000, guid: 6a53c999a6f6cf3458137cfa53d94c81, type: 2}
+  - kit109Tutorial: 3
+    Heading:
+      m_Untranslated: Generated Pathfinding
+    Text:
+      m_Untranslated: Let the enemies navigate (virtually) any environment with this
+        (slightly dodgy) node-generation script!
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 2a99f0847aaffec47b855bf1f2ceacf1, type: 3}
+    IndexOfPrereqSection: 6
+    Tutorial: {fileID: 11400000, guid: 0cd9061d5249ce84190b6e6bfa671fee, type: 2}
+  - kit109Tutorial: 3
+    Heading:
+      m_Untranslated: Exercise
+    Text:
+      m_Untranslated: Complete this to get marked off for this tutorial.
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: da615a7ab29fd944d94c2cb73e1b98d3, type: 3}
+    IndexOfPrereqSection: -1
+    Tutorial: {fileID: 11400000, guid: 2b9d1fd9178d7e24c826845b27b3c0b9, type: 2}
+  - kit109Tutorial: 3
+    Heading:
+      m_Untranslated: Homework and Resources
+    Text:
+      m_Untranslated: Further reading and useful information.
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: b3742cd59b62a25488810a1806c0aec2, type: 3}
+    IndexOfPrereqSection: -1
+    Tutorial: {fileID: 11400000, guid: 761545138fc53c24cb9728534160c86e, type: 2}
+  - kit109Tutorial: 3
+    Heading:
+      m_Untranslated: MyLO Quiz 11
+    Text:
+      m_Untranslated: Simple AI Behaviours
+    Metadata: 
+    Url: https://mylo.utas.edu.au/d2l/le/content/691741/viewContent/5791221/View
+    Image: {fileID: 2800000, guid: f1b9caa53ea0e4d44bc3fba0aa501c60, type: 3}
+    IndexOfPrereqSection: -1
+    Tutorial: {fileID: 0}
+  - kit109Tutorial: 4
+    Heading:
+      m_Untranslated: Introduction
+    Text:
+      m_Untranslated: Explore the base project
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 2a99f0847aaffec47b855bf1f2ceacf1, type: 3}
+    IndexOfPrereqSection: -1
+    Tutorial: {fileID: 11400000, guid: dce6d4c18c4725441b628682bd22b3cc, type: 2}
+  - kit109Tutorial: 4
+    Heading:
+      m_Untranslated: Spawners
+    Text:
+      m_Untranslated: Get started with a basic enemy spawner.
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 2a99f0847aaffec47b855bf1f2ceacf1, type: 3}
+    IndexOfPrereqSection: 0
+    Tutorial: {fileID: 11400000, guid: bd4555a8e932c2e4f8b04288bc4feb22, type: 2}
+  - kit109Tutorial: 4
+    Heading:
+      m_Untranslated: Coroutine Basics
+    Text:
+      m_Untranslated: Make enemies spawn over time using a coroutine loop.
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 2a99f0847aaffec47b855bf1f2ceacf1, type: 3}
+    IndexOfPrereqSection: 1
+    Tutorial: {fileID: 11400000, guid: c85f132f2265732408e8657699626a0a, type: 2}
+  - kit109Tutorial: 4
+    Heading:
+      m_Untranslated: Coroutine Loops
+    Text:
+      m_Untranslated: Upgrade your spawner to spawn an arbitrary number of enemies.
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 2a99f0847aaffec47b855bf1f2ceacf1, type: 3}
+    IndexOfPrereqSection: 2
+    Tutorial: {fileID: 11400000, guid: 307a18ed028aacb4e8fe93efac3c33e8, type: 2}
+  - kit109Tutorial: 4
+    Heading:
+      m_Untranslated: Using Arrays and Random
+    Text:
+      m_Untranslated: Make the spawner pick from a random set of enemies.
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 2a99f0847aaffec47b855bf1f2ceacf1, type: 3}
+    IndexOfPrereqSection: 3
+    Tutorial: {fileID: 11400000, guid: 31aa8e18effd1474eb81007f0f5e6614, type: 2}
+  - kit109Tutorial: 4
+    Heading:
+      m_Untranslated: Gizmos and Random Locations
+    Text:
+      m_Untranslated: Give some randomness to the spawn locations.
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 2a99f0847aaffec47b855bf1f2ceacf1, type: 3}
+    IndexOfPrereqSection: 4
+    Tutorial: {fileID: 11400000, guid: c6708e816d868f948819036615866b78, type: 2}
+  - kit109Tutorial: 4
+    Heading:
+      m_Untranslated: Random Seeds
+    Text:
+      m_Untranslated: Make it random-but-consistent (think Minecraft seeds) using
+        Random.InitState to set the seed.
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 2a99f0847aaffec47b855bf1f2ceacf1, type: 3}
+    IndexOfPrereqSection: 5
+    Tutorial: {fileID: 11400000, guid: 9ee79e1565fb0ca468a885c37f63c638, type: 2}
+  - kit109Tutorial: 4
+    Heading:
+      m_Untranslated: Moving Objects
+    Text:
+      m_Untranslated: Make the spawner move around, by learning Mathf.Lerp!
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 2a99f0847aaffec47b855bf1f2ceacf1, type: 3}
+    IndexOfPrereqSection: 6
+    Tutorial: {fileID: 11400000, guid: d4c21707adf96ba4fa73cb3218d00212, type: 2}
+  - kit109Tutorial: 4
+    Heading:
+      m_Untranslated: Animation Curves
+    Text:
+      m_Untranslated: Make the spawner move around in code using an Animation Curve.
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 2a99f0847aaffec47b855bf1f2ceacf1, type: 3}
+    IndexOfPrereqSection: 7
+    Tutorial: {fileID: 11400000, guid: 6f5929aea82539542af1b216d3d71866, type: 2}
+  - kit109Tutorial: 4
+    Heading:
+      m_Untranslated: Exercise
+    Text:
+      m_Untranslated: Complete this to get marked off for this tutorial.
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: da615a7ab29fd944d94c2cb73e1b98d3, type: 3}
+    IndexOfPrereqSection: -1
+    Tutorial: {fileID: 11400000, guid: 77dcb6ec41cc538429637570b19a9d7e, type: 2}
+  - kit109Tutorial: 4
+    Heading:
+      m_Untranslated: Homework and Resources
+    Text:
+      m_Untranslated: Further reading and useful information.
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: b3742cd59b62a25488810a1806c0aec2, type: 3}
+    IndexOfPrereqSection: -1
+    Tutorial: {fileID: 11400000, guid: 60a06335e73fa8e48a20f08cb3f35d2b, type: 2}
+  - kit109Tutorial: 4
+    Heading:
+      m_Untranslated: MyLO Quiz 12
+    Text:
+      m_Untranslated: Arrays, Coroutines, and Random
+    Metadata: 
+    Url: https://mylo.utas.edu.au/d2l/le/content/691741/viewContent/5791222/View
+    Image: {fileID: 2800000, guid: f1b9caa53ea0e4d44bc3fba0aa501c60, type: 3}
+    IndexOfPrereqSection: -1
+    Tutorial: {fileID: 0}
+  - kit109Tutorial: 5
+    Heading:
+      m_Untranslated: Introduction
+    Text:
+      m_Untranslated: Explore the base project
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 346dfed2687507b4b98ad16f92627c8f, type: 3}
+    IndexOfPrereqSection: -1
+    Tutorial: {fileID: 11400000, guid: b264d66bdab12634a9464dca853fb748, type: 2}
+  - kit109Tutorial: 5
+    Heading:
+      m_Untranslated: Trail Renderers
+    Text:
+      m_Untranslated: Try putting a trail on the player and the bullet using a Trail
+        Renderer
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 346dfed2687507b4b98ad16f92627c8f, type: 3}
+    IndexOfPrereqSection: 0
+    Tutorial: {fileID: 11400000, guid: 8ffcce0ef5e8fd34ea59a73c841c9ef4, type: 2}
+  - kit109Tutorial: 5
+    Heading:
+      m_Untranslated: Particle Systems Intro
+    Text:
+      m_Untranslated: Learn about the core concepts of Particle Systems
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 346dfed2687507b4b98ad16f92627c8f, type: 3}
+    IndexOfPrereqSection: 1
+    Tutorial: {fileID: 11400000, guid: 56a970ada8143a54fbfcc3b3c6bcb17b, type: 2}
+  - kit109Tutorial: 5
+    Heading:
+      m_Untranslated: Particle System Explosions
+    Text:
+      m_Untranslated: Make an explosion using your new-found Particle System knowledge!
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 346dfed2687507b4b98ad16f92627c8f, type: 3}
+    IndexOfPrereqSection: 2
+    Tutorial: {fileID: 11400000, guid: 9a083172a931cca479d83890b537cea3, type: 2}
+  - kit109Tutorial: 5
+    Heading:
+      m_Untranslated: Sub-Emitters
+    Text:
+      m_Untranslated: Make some fireworks happen by learning how to spawn particles
+        from other particles.
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 346dfed2687507b4b98ad16f92627c8f, type: 3}
+    IndexOfPrereqSection: 3
+    Tutorial: {fileID: 11400000, guid: f5c511b3efa50d246b9724694e75fda6, type: 2}
+  - kit109Tutorial: 5
+    Heading:
+      m_Untranslated: Particle Collisions
+    Text:
+      m_Untranslated: Learn about making particles collide.
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 346dfed2687507b4b98ad16f92627c8f, type: 3}
+    IndexOfPrereqSection: 4
+    Tutorial: {fileID: 11400000, guid: 8fedd1edbc6e5ef45a272e9730d986ab, type: 2}
+  - kit109Tutorial: 5
+    Heading:
+      m_Untranslated: Exercise
+    Text:
+      m_Untranslated: Complete this to get marked off for this tutorial.
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: da615a7ab29fd944d94c2cb73e1b98d3, type: 3}
+    IndexOfPrereqSection: -1
+    Tutorial: {fileID: 11400000, guid: c86286d3cdc32d1408220d48648850f1, type: 2}
+  - kit109Tutorial: 5
+    Heading:
+      m_Untranslated: Homework and Resources
+    Text:
+      m_Untranslated: Further reading and useful information.
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: b3742cd59b62a25488810a1806c0aec2, type: 3}
+    IndexOfPrereqSection: -1
+    Tutorial: {fileID: 11400000, guid: 2bd6551a2548396479b25f4555c09be9, type: 2}
+  - kit109Tutorial: 5
+    Heading:
+      m_Untranslated: MyLO Quiz 13
+    Text:
+      m_Untranslated: Trails and Particles
+    Metadata: 
+    Url: https://mylo.utas.edu.au/d2l/le/content/691741/viewContent/5791223/View
+    Image: {fileID: 2800000, guid: f1b9caa53ea0e4d44bc3fba0aa501c60, type: 3}
+    IndexOfPrereqSection: -1
+    Tutorial: {fileID: 0}
+  - kit109Tutorial: 6
+    Heading:
+      m_Untranslated: Introduction
+    Text:
+      m_Untranslated: Check your project, and learn about he basics of the Post Processing
+        Stack.
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 2a99f0847aaffec47b855bf1f2ceacf1, type: 3}
+    IndexOfPrereqSection: -1
+    Tutorial: {fileID: 11400000, guid: fa6ec69a4eb0c274b81fb150c1a6af7c, type: 2}
+  - kit109Tutorial: 6
+    Heading:
+      m_Untranslated: Vignette Effect
+    Text:
+      m_Untranslated: Add some mood to your scene with a Vignette effect to darken
+        the edges of the screen.
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 2a99f0847aaffec47b855bf1f2ceacf1, type: 3}
+    IndexOfPrereqSection: 0
+    Tutorial: {fileID: 11400000, guid: a22b394228ba68c40ab8bb3d7964da60, type: 2}
+  - kit109Tutorial: 6
+    Heading:
+      m_Untranslated: Colour Grading and Bloom Effects
+    Text:
+      m_Untranslated: Play with the overall colour feel of your scene by applying
+        film-like colour grading to your scene.
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 2a99f0847aaffec47b855bf1f2ceacf1, type: 3}
+    IndexOfPrereqSection: 1
+    Tutorial: {fileID: 11400000, guid: d07612de668eb3b4da53dbd16b25f904, type: 2}
+  - kit109Tutorial: 6
+    Heading:
+      m_Untranslated: Post Processing Volumes
+    Text:
+      m_Untranslated: Make an effect only occur when the player is within a certain
+        area.
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 2a99f0847aaffec47b855bf1f2ceacf1, type: 3}
+    IndexOfPrereqSection: 2
+    Tutorial: {fileID: 11400000, guid: 374c92ddea7267b43bd6fc68515a164c, type: 2}
+  - kit109Tutorial: 6
+    Heading:
+      m_Untranslated: Chromatic Aberration Effect
+    Text:
+      m_Untranslated: Make a crazy effect happen when the player gets near an enemy!
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 2a99f0847aaffec47b855bf1f2ceacf1, type: 3}
+    IndexOfPrereqSection: 3
+    Tutorial: {fileID: 11400000, guid: 9dd8b7016a2140a4c9111732712b71f7, type: 2}
+  - kit109Tutorial: 6
+    Heading:
+      m_Untranslated: Scripting with Post Processing
+    Text:
+      m_Untranslated: Learn how to animate an effect just in code!
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 2a99f0847aaffec47b855bf1f2ceacf1, type: 3}
+    IndexOfPrereqSection: 4
+    Tutorial: {fileID: 11400000, guid: 8d874d95c0ece264e8d8ea5f0c499ba3, type: 2}
+  - kit109Tutorial: 6
+    Heading:
+      m_Untranslated: Exercise
+    Text:
+      m_Untranslated: Complete this to get marked off for this tutorial.
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: da615a7ab29fd944d94c2cb73e1b98d3, type: 3}
+    IndexOfPrereqSection: -1
+    Tutorial: {fileID: 11400000, guid: ddf7457c801139245b2f102759ad9eb1, type: 2}
+  - kit109Tutorial: 6
+    Heading:
+      m_Untranslated: Homework and Resources
+    Text:
+      m_Untranslated: Further reading and useful information.
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: b3742cd59b62a25488810a1806c0aec2, type: 3}
+    IndexOfPrereqSection: -1
+    Tutorial: {fileID: 11400000, guid: f4b02210651bca84e80e0e7ff6d558b5, type: 2}
+  - kit109Tutorial: 6
+    Heading:
+      m_Untranslated: MyLO Quiz 14
+    Text:
+      m_Untranslated: Post Processing
+    Metadata: 
+    Url: https://mylo.utas.edu.au/d2l/le/content/691741/viewContent/5791224/View
+    Image: {fileID: 2800000, guid: f1b9caa53ea0e4d44bc3fba0aa501c60, type: 3}
+    IndexOfPrereqSection: -1
+    Tutorial: {fileID: 11400000, guid: 5797ee64be8ee7f4fab7db7e96cfb78c, type: 2}
+  - kit109Tutorial: 7
+    Heading:
+      m_Untranslated: Introduction
+    Text:
+      m_Untranslated: Check your project, and learn the basics of raycasting.
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 2a99f0847aaffec47b855bf1f2ceacf1, type: 3}
+    IndexOfPrereqSection: -1
+    Tutorial: {fileID: 11400000, guid: c3877a14a21af90479fc270feb4d8d4b, type: 2}
+  - kit109Tutorial: 7
+    Heading:
+      m_Untranslated: Raycast to Mouse
+    Text:
+      m_Untranslated: Learn about basics of raycasting, and create a script which
+        detects what is under the mouse pointer (using Physics2D.OverlapPoint)
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 2a99f0847aaffec47b855bf1f2ceacf1, type: 3}
+    IndexOfPrereqSection: 0
+    Tutorial: {fileID: 11400000, guid: f31f297d0017bd340b38a65481a73c59, type: 2}
+  - kit109Tutorial: 7
+    Heading:
+      m_Untranslated: Layer Masks
+    Text:
+      m_Untranslated: Work out how to ignore (rude) certain layers using Layer Masks.
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 2a99f0847aaffec47b855bf1f2ceacf1, type: 3}
+    IndexOfPrereqSection: 1
+    Tutorial: {fileID: 11400000, guid: 4a5ecfd8ee7ce14429d81295bb360c6d, type: 2}
+  - kit109Tutorial: 7
+    Heading:
+      m_Untranslated: Raycast in Direction
+    Text:
+      m_Untranslated: Find out what objects lie between the player and your mouse
+        (Using Physics2D.RayCastAll).
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 2a99f0847aaffec47b855bf1f2ceacf1, type: 3}
+    IndexOfPrereqSection: 2
+    Tutorial: {fileID: 11400000, guid: da6424658c6970440b03b193fa951bff, type: 2}
+  - kit109Tutorial: 7
+    Heading:
+      m_Untranslated: Raycast an Area + Raycast Efficiency
+    Text:
+      m_Untranslated: Tag (using a Gizmo) all enemies in an area (Using Physics2D.OverlapCircle).
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 2a99f0847aaffec47b855bf1f2ceacf1, type: 3}
+    IndexOfPrereqSection: 3
+    Tutorial: {fileID: 11400000, guid: 24146ae4bc7ed1149b4a9f5b0e310289, type: 2}
+  - kit109Tutorial: 7
+    Heading:
+      m_Untranslated: Raycast Reflections
+    Text:
+      m_Untranslated: Make a bouncy laser (using Vector3.Reflect).
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 2a99f0847aaffec47b855bf1f2ceacf1, type: 3}
+    IndexOfPrereqSection: 4
+    Tutorial: {fileID: 11400000, guid: 123e36a31f9c97e479027205fa745e4f, type: 2}
+  - kit109Tutorial: 7
+    Heading:
+      m_Untranslated: Unity Event System Plus Raycasting
+    Text:
+      m_Untranslated: Make a tripwire that can trigger any action in the game using
+        the UnityEvent System.
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: 2a99f0847aaffec47b855bf1f2ceacf1, type: 3}
+    IndexOfPrereqSection: 5
+    Tutorial: {fileID: 11400000, guid: 4895bb3f259f0ff47826a039edc4b98e, type: 2}
+  - kit109Tutorial: 7
+    Heading:
+      m_Untranslated: Exercise
+    Text:
+      m_Untranslated: Complete this to get marked off for this tutorial.
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: da615a7ab29fd944d94c2cb73e1b98d3, type: 3}
+    IndexOfPrereqSection: -1
+    Tutorial: {fileID: 11400000, guid: 4cf55d5754a1aec4dbf3116396c80b12, type: 2}
+  - kit109Tutorial: 7
+    Heading:
+      m_Untranslated: Homework and Resources
+    Text:
+      m_Untranslated: Further reading and useful information.
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: b3742cd59b62a25488810a1806c0aec2, type: 3}
+    IndexOfPrereqSection: -1
+    Tutorial: {fileID: 11400000, guid: ead6f97e51424504b9877b8e826d061f, type: 2}
+  - kit109Tutorial: 7
+    Heading:
+      m_Untranslated: MyLO Quiz 15
+    Text:
+      m_Untranslated: Raycasting
+    Metadata: 
+    Url: https://mylo.utas.edu.au/d2l/le/content/691741/viewContent/5791227/View
+    Image: {fileID: 2800000, guid: f1b9caa53ea0e4d44bc3fba0aa501c60, type: 3}
+    IndexOfPrereqSection: -1
+    Tutorial: {fileID: 0}
+  showBasePackages: 1

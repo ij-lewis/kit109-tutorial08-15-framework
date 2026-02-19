@@ -1,0 +1,207 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff771ccdf4150419d9ff4d342b069aae, type: 3}
+  m_Name: B6-BulletTrailSetup
+  m_EditorClassIdentifier: 
+  m_Paragraphs:
+    m_Items:
+    - m_Type: 0
+      Title:
+        m_Untranslated: Bullet Trails - Set Up
+      Text:
+        m_Untranslated: "This next step gets you to add trails to the <asset>Bullet</asset>.
+          However, you may not have completed the exercise for shooting bullets and
+          your <asset>PlayerShooting</asset> script might only handle animation (or
+          it may be shooting <b>too many bullets too quickly</b> to see a trail).\nBest
+          to use the code below (shhh, don't tell anyone!):\n<code>\nusing System.Collections;\r\nusing
+          System.Collections.Generic;\r\nusing UnityEngine;\r\n\r\npublic class PlayerShooting
+          : MonoBehaviour\r\n{\r\n    Animator anim;\r\n    new Rigidbody2D rigidbody2D;\r\n\r\n   
+          public GameObject bulletPrefab;\r\n\r\n    void Awake()\r\n    {\r\n       
+          anim = gameObject.GetComponent&lt;Animator>();\r\n        rigidbody2D =
+          gameObject.GetComponent&lt;Rigidbody2D>();\r\n    }\r\n\r\n    void Update()\r\n   
+          {\r\n        bool shooting = Input.GetMouseButton(0); //YOU TODO: make
+          this come from player input\r\n\r\n        if (shooting)\r\n        {\r\n           
+          anim.SetBool(\"Shooting\", true);\r\n\r\n            //Direction to mouse
+          is a vector between mouse position (A) and the player (B), so (A-B):\r\n           
+          Vector2 A = Camera.main.ScreenToWorldPoint(Input.mousePosition);\r\n           
+          Vector2 B = transform.position;\r\n            Vector2 directionToMouse
+          = (A - B).normalized;\r\n            Debug.DrawLine(A, B); //this appears
+          only in the editor\r\n\r\n\r\n            //YOU TODO: make the player shoot
+          in the direction of the mouse\r\n            //(this code given in Tutorial
+          13)\r\n            if (Time.frameCount % 120 == 0 || Input.GetMouseButtonDown(0))
+          //shoot every 120 frames or if player just shot, NB: there are other ways
+          to do this, this is quick and dirty\r\n                                                                           
+          //can you explain why this isn't perfect? :) You should be able to notice
+          inconsistency\r\n            {\r\n                var spawnBullet = Instantiate(bulletPrefab,
+          transform.position, Quaternion.FromToRotation(Vector2.up, directionToMouse));\r\n               
+          spawnBullet.GetComponent&lt;Rigidbody2D>().velocity = spawnBullet.transform.up
+          * 10f; //shoot in that direction\r\n            }\r\n\r\n            anim.SetFloat(\"XSpeed\",
+          directionToMouse.x);\r\n            anim.SetFloat(\"YSpeed\", directionToMouse.y);\r\n\r\n       
+          }\r\n        else\r\n        {\r\n            anim.SetBool(\"Shooting\",
+          false);\r\n        }\r\n    }\r\n}\r\n</code>"
+      m_PollItems: []
+      m_PollCorrectItemIndexes: 00000000
+      m_Tutorial: {fileID: 0}
+      m_Image: {fileID: 0}
+      m_Video: {fileID: 0}
+      m_CriteriaCompletion: 0
+      m_Criteria:
+        m_Items: []
+      m_PossibleErrors: []
+      m_MaskingSettings:
+        m_MaskingEnabled: 0
+        m_UnmaskedViews: []
+      m_Summary: 
+      m_Description: 
+      m_InstructionBoxTitle: 
+      m_InstructionText: 
+      m_TutorialButtonText: 
+      codeBlockText: 
+    - m_Type: 1
+      Title:
+        m_Untranslated: Replace the PlayerShooting Code with the Above
+      Text:
+        m_Untranslated: Unless you completed the exercise and your character doesn't
+          shoot too many bullets.
+      m_PollItems: []
+      m_PollCorrectItemIndexes: 00000000
+      m_Tutorial: {fileID: 0}
+      m_Image: {fileID: 0}
+      m_Video: {fileID: 0}
+      m_CriteriaCompletion: 2
+      m_Criteria:
+        m_Items: []
+      m_PossibleErrors: []
+      m_MaskingSettings:
+        m_MaskingEnabled: 0
+        m_UnmaskedViews: []
+      m_Summary: 
+      m_Description: 
+      m_InstructionBoxTitle: 
+      m_InstructionText: 
+      m_TutorialButtonText: 
+      codeBlockText: 
+    - m_Type: 1
+      Title:
+        m_Untranslated: Link up the Bullet Prefab on the PlayerShooting Script
+      Text:
+        m_Untranslated: This is on the <go>Player</go>. Link it to <asset>Bullet</asset>.
+      m_PollItems: []
+      m_PollCorrectItemIndexes: 00000000
+      m_Tutorial: {fileID: 0}
+      m_Image: {fileID: 0}
+      m_Video: {fileID: 0}
+      m_CriteriaCompletion: 0
+      m_Criteria:
+        m_Items:
+        - Type:
+            m_TypeName: Unity.Tutorials.Core.Editor.ArbitraryCriterion, Unity.Tutorials.Core.Editor,
+              Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+          Criterion: {fileID: 4417173203303454270}
+      m_PossibleErrors: []
+      m_MaskingSettings:
+        m_MaskingEnabled: 0
+        m_UnmaskedViews: []
+      m_Summary: 
+      m_Description: 
+      m_InstructionBoxTitle: 
+      m_InstructionText: 
+      m_TutorialButtonText: 
+      codeBlockText: 
+  m_CameraSettings:
+    m_CameraMode: 0
+    m_FocusMode: 0
+    m_Orthographic: 0
+    m_Size: 0
+    m_Pivot: {x: 0, y: 0, z: 0}
+    m_Rotation: {x: 0, y: 0, z: 0, w: 0}
+    m_FrameObject:
+      m_SceneGuid: 
+      m_GameObjectGuid: 
+      m_SerializedComponentType:
+        m_TypeName: 
+      m_ComponentIndex: 0
+      m_AssetObject: {fileID: 0}
+      m_Prefab: {fileID: 0}
+    m_Enabled: 0
+  NextButton:
+    m_Untranslated: Next
+  DoneButton:
+    m_Untranslated: Done
+  m_NextButton: Next
+  m_DoneButton: Done
+  m_CompletedSound: {fileID: 0}
+  m_autoAdvance: 0
+  m_OnBeforePageShown:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnAfterPageShown:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnBeforeTutorialQuit:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnTutorialPageStay:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &4417173203303454270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7231e8df50e16c74c979c4a2affab91b, type: 3}
+  m_Name: ArbitraryCriterion
+  m_EditorClassIdentifier: 
+  m_Callback:
+    _target: {fileID: 11400000, guid: d4bb521d093039441a81053d20c98975, type: 2}
+    _methodName: DoesFieldContainAsset
+    _args:
+    - boolValue: 0
+      intValue: 0
+      floatValue: 0
+      stringValue: Player
+      objectValue: {fileID: 0}
+      argType: 4
+    - boolValue: 0
+      intValue: 0
+      floatValue: 0
+      stringValue: PlayerShooting
+      objectValue: {fileID: 0}
+      argType: 4
+    - boolValue: 0
+      intValue: 0
+      floatValue: 0
+      stringValue: bulletPrefab
+      objectValue: {fileID: 0}
+      argType: 4
+    - boolValue: 0
+      intValue: 0
+      floatValue: 0
+      stringValue: Bullet
+      objectValue: {fileID: 0}
+      argType: 4
+    _dynamic: 0
+    _typeName: Unity.Tutorials.Core.Editor.ArbitraryCriterion+BoolCallback, Unity.Tutorials.Core.Editor,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    dirty: 0
+  m_AutoCompleteCallback:
+    _target: {fileID: 0}
+    _methodName: 
+    _args: []
+    _dynamic: 0
+    _typeName: Unity.Tutorials.Core.Editor.ArbitraryCriterion+BoolCallback, Unity.Tutorials.Core.Editor,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    dirty: 0

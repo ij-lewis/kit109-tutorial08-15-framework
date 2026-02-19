@@ -1,0 +1,121 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff771ccdf4150419d9ff4d342b069aae, type: 3}
+  m_Name: B3-Settings
+  m_EditorClassIdentifier: 
+  m_Paragraphs:
+    m_Items:
+    - m_Type: 0
+      Title:
+        m_Untranslated: Trail Renderer Settings
+      Text:
+        m_Untranslated: "Let\u2019s have a look at some of the settings we can apply
+          to the trail renderer:\r\n\u2022 The <b>width</b> of the trail can be set
+          for the entire length of the trail, as well as how the width should vary
+          between the start and end of the trail;\r\n\u2022 The <b>time</b> setting
+          adjusts how long a trail should last for, in terms of how long since a
+          segment of the trail was created should it be visible for;\r\n\u2022 The
+          <b>min vertex distance</b> required before a new trail segment should be created
+          allows us to adjust the smoothness/quality of the trail;\r\n\u2022 The
+          <b>colour</b> of the trail can be set as a gradient over the length of
+          the trail;\r\n\u2022 The <b>corner</b> and <b>end cap vertices</b> settings
+          allow you to add rounding to sharp edges of the trail;\r\n\u2022 The <b>alignment</b>
+          setting determines what direction the trail should point (toward the camera
+          view, or work out a rotation based upon the object\u2019s movement in 3D);
+          \r\n\u2022 If your material uses a texture, <b>texture mode</b> determines
+          how should that texture be distributed across the length of the trail (stretched,
+          tiled based upon distance, tiled based upon segment size, etc);\r\n\u2022
+          As the Trail Renderer works in 3D, options for the lighting system are
+          provided, currently generate lighting data is off, but there are also settings
+          for <b>shadows, lighting, and probes for lights and reflections</b> (we
+          won\u2019t use any of these);\r\n\u2022 The <b>material</b> of the renderer
+          allows us to use custom shaders for various effects; and\r\n\u2022 Additional
+          settings for <b>motion vectors</b> (for motion blurring), <b>occlusion</b>,
+          and for where the trail is placed in the 2D <b>sorting layers</b> (which
+          we\u2019ve already used).\r"
+      m_PollItems: []
+      m_PollCorrectItemIndexes: 00000000
+      m_Tutorial: {fileID: 0}
+      m_Image: {fileID: 0}
+      m_Video: {fileID: 0}
+      m_CriteriaCompletion: 0
+      m_Criteria:
+        m_Items: []
+      m_PossibleErrors: []
+      m_MaskingSettings:
+        m_MaskingEnabled: 0
+        m_UnmaskedViews: []
+      m_Summary: 
+      m_Description: 
+      m_InstructionBoxTitle: 
+      m_InstructionText: 
+      m_TutorialButtonText: 
+      codeBlockText: 
+    - m_Type: 1
+      Title:
+        m_Untranslated: Play Around with some Trail Renderer Settings
+      Text:
+        m_Untranslated: But best to undo before the next step.
+      m_PollItems: []
+      m_PollCorrectItemIndexes: 00000000
+      m_Tutorial: {fileID: 0}
+      m_Image: {fileID: 0}
+      m_Video: {fileID: 0}
+      m_CriteriaCompletion: 2
+      m_Criteria:
+        m_Items: []
+      m_PossibleErrors: []
+      m_MaskingSettings:
+        m_MaskingEnabled: 0
+        m_UnmaskedViews: []
+      m_Summary: 
+      m_Description: 
+      m_InstructionBoxTitle: 
+      m_InstructionText: 
+      m_TutorialButtonText: 
+      codeBlockText: 
+  m_CameraSettings:
+    m_CameraMode: 0
+    m_FocusMode: 0
+    m_Orthographic: 0
+    m_Size: 0
+    m_Pivot: {x: 0, y: 0, z: 0}
+    m_Rotation: {x: 0, y: 0, z: 0, w: 0}
+    m_FrameObject:
+      m_SceneGuid: 
+      m_GameObjectGuid: 
+      m_SerializedComponentType:
+        m_TypeName: 
+      m_ComponentIndex: 0
+      m_AssetObject: {fileID: 0}
+      m_Prefab: {fileID: 0}
+    m_Enabled: 0
+  NextButton:
+    m_Untranslated: Next
+  DoneButton:
+    m_Untranslated: Done
+  m_NextButton: Next
+  m_DoneButton: Done
+  m_CompletedSound: {fileID: 0}
+  m_autoAdvance: 0
+  m_OnBeforePageShown:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnAfterPageShown:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnBeforeTutorialQuit:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnTutorialPageStay:
+    m_PersistentCalls:
+      m_Calls: []

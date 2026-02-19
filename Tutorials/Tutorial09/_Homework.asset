@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff771ccdf4150419d9ff4d342b069aae, type: 3}
+  m_Name: _Homework
+  m_EditorClassIdentifier: 
+  m_Paragraphs:
+    m_Items:
+    - m_Type: 0
+      Title:
+        m_Untranslated: Homework
+      Text:
+        m_Untranslated: "Before doing the next practical you need to:\r\n\u2022 Read
+          the following Unity documentation to reinforce the materials in this practical:\r\n\to
+          Tilemap: <a>https://docs.unity3d.com/Manual/Tilemap.html</a>\r\n\to Tile
+          Assets: <a>https://docs.unity3d.com/Manual/Tilemap-TileAsset.html</a> \r\n\to
+          Creating Tiles: <a>https://docs.unity3d.com/Manual/Tilemap-CreatingTiles.html</a>
+          \r\n\to Creating Tilemaps: <a>https://docs.unity3d.com/Manual/Tilemap-CreatingTilemaps.html</a>
+          \r\n\to Tilemap Palette: <a>https://docs.unity3d.com/Manual/Tilemap-Palette.html</a>
+          \r\n\to Painting Tilemaps: <a>https://docs.unity3d.com/Manual/Tilemap-Painting.html</a>
+          \r\n\to Tilemaps and Physics 2D: <a>https://docs.unity3d.com/Manual/Tilemap-Physics2D.html</a>
+          \r\n\to (Optional) Scriptable Tiles: <a>https://docs.unity3d.com/Manual/Tilemap-ScriptableTiles.html</a>
+          (and look at all the sub-sections)\r\n\to (Optional) Scriptable Brushes:
+          <a>https://docs.unity3d.com/Manual/Tilemap-ScriptableBrushes.html</a> (and
+          look at all the sub-sections)\r\n\u2022 Check out Unity\u2019s 2D-Extras
+          repository:\r\n\to <a>https://github.com/Unity-Technologies/2d-extras</a>
+          \r\n\u2022 Watch the following Unity tutorial videos to reinforce the materials
+          in this practical:\r\n\to Intro to 2D World Building with Tilemap: <a>https://unity3d.com/learn/tutorials/topics/2d-game-creation/intro-2d-world-building-w-tilemap</a>
+          \r\n\to Core Tilemap Concepts: <a>https://unity3d.com/learn/tutorials/topics/2d-game-creation/core-tilemap-concepts</a>
+          \r\n\to Tilemap Collider 2D and Composite Collider 2D: <a>https://unity3d.com/learn/tutorials/topics/2d-game-creation/tilemap-collider-2d-and-composite-collider-2d</a>
+          \r\n\to Using Rule Tiles With Tilemap: <a>https://unity3d.com/learn/tutorials/topics/2d-game-creation/using-rule-tiles-tilemap</a>
+          \r"
+      m_PollItems: []
+      m_PollCorrectItemIndexes: 00000000
+      m_Tutorial: {fileID: 0}
+      m_Image: {fileID: 0}
+      m_Video: {fileID: 0}
+      m_CriteriaCompletion: 0
+      m_Criteria:
+        m_Items: []
+      m_PossibleErrors: []
+      m_MaskingSettings:
+        m_MaskingEnabled: 0
+        m_UnmaskedViews: []
+      m_Summary: 
+      m_Description: 
+      m_InstructionBoxTitle: 
+      m_InstructionText: 
+      m_TutorialButtonText: 
+      codeBlockText: 
+  m_CameraSettings:
+    m_CameraMode: 0
+    m_FocusMode: 0
+    m_Orthographic: 0
+    m_Size: 0
+    m_Pivot: {x: 0, y: 0, z: 0}
+    m_Rotation: {x: 0, y: 0, z: 0, w: 0}
+    m_FrameObject:
+      m_SceneGuid: 
+      m_GameObjectGuid: 
+      m_SerializedComponentType:
+        m_TypeName: 
+      m_ComponentIndex: 0
+      m_AssetObject: {fileID: 0}
+      m_Prefab: {fileID: 0}
+    m_Enabled: 0
+  NextButton:
+    m_Untranslated: Next
+  DoneButton:
+    m_Untranslated: Done
+  m_NextButton: Next
+  m_DoneButton: Done
+  m_CompletedSound: {fileID: 0}
+  m_autoAdvance: 0
+  m_OnBeforePageShown:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnAfterPageShown:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnBeforeTutorialQuit:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnTutorialPageStay:
+    m_PersistentCalls:
+      m_Calls: []

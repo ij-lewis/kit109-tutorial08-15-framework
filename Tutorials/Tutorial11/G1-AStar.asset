@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff771ccdf4150419d9ff4d342b069aae, type: 3}
+  m_Name: G1-AStar
+  m_EditorClassIdentifier: 
+  m_Paragraphs:
+    m_Items:
+    - m_Type: 0
+      Title:
+        m_Untranslated: Pathfinding With A* (A-Star)
+      Text:
+        m_Untranslated: "(The code in this section is based upon work done by the
+          Unity community, found here: <a>http://wiki.unity3d.com/index.php/AStarHelper</a>)\r\nThe
+          behaviours we have seen so far have only focused on a particular target,
+          and ignore the environment. A better AI would take into account the walls,
+          and be able to walk around them, instead of into them.\r\nTo accomplish
+          this, we need to implement pathfinding. This is a very broad topic, and
+          there are lots of different approaches and algorithms that can be used.
+          Unity provides a feature-rich implementation called NavMash, however this
+          is limited to 3D games. While there are assets out there that provide this
+          functionality, a simple and effective approach is to use the well-established
+          A* (A-Star) algorithm.\r\nFirst developed at Stanford in 1986, A* uses
+          a weighted-graph of nodes. Each node defines links to other nodes, as well
+          as the cost associated with each link. The algorithm examines all paths
+          through these nodes for the best possible path in terms of cost (e.g. shortest
+          distance, but you can factor in other costs based upon the problem at hand,
+          such as tollways, hills, different surfaces etc.) \r\nThe specifics of
+          A* are beyond the scope of this unit (we will instead be looking at how
+          an AI could use A* to track a target), but the following two resources
+          are an excellent guide to what\u2019s \u201Cunder the hood\u201D of the
+          A* search:\r\nIntroduction to A*: <a>https://www.raywenderlich.com/4946/introduction-to-a-pathfinding
+          </a>\nInteractive Demo: <a>http://ashblue.github.io/javascript-pathfinding/</a>
+          \r"
+      m_PollItems: []
+      m_PollCorrectItemIndexes: 00000000
+      m_Tutorial: {fileID: 0}
+      m_Image: {fileID: 0}
+      m_Video: {fileID: 0}
+      m_CriteriaCompletion: 0
+      m_Criteria:
+        m_Items: []
+      m_PossibleErrors: []
+      m_MaskingSettings:
+        m_MaskingEnabled: 0
+        m_UnmaskedViews: []
+      m_Summary: 
+      m_Description: 
+      m_InstructionBoxTitle: 
+      m_InstructionText: 
+      m_TutorialButtonText: 
+      codeBlockText: 
+  m_CameraSettings:
+    m_CameraMode: 0
+    m_FocusMode: 0
+    m_Orthographic: 0
+    m_Size: 0
+    m_Pivot: {x: 0, y: 0, z: 0}
+    m_Rotation: {x: 0, y: 0, z: 0, w: 0}
+    m_FrameObject:
+      m_SceneGuid: 
+      m_GameObjectGuid: 
+      m_SerializedComponentType:
+        m_TypeName: 
+      m_ComponentIndex: 0
+      m_AssetObject: {fileID: 0}
+      m_Prefab: {fileID: 0}
+    m_Enabled: 0
+  NextButton:
+    m_Untranslated: Next
+  DoneButton:
+    m_Untranslated: Done
+  m_NextButton: Next
+  m_DoneButton: Done
+  m_CompletedSound: {fileID: 0}
+  m_autoAdvance: 0
+  m_OnBeforePageShown:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnAfterPageShown:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnBeforeTutorialQuit:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnTutorialPageStay:
+    m_PersistentCalls:
+      m_Calls: []
