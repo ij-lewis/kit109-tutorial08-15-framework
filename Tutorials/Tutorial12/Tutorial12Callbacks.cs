@@ -383,16 +383,17 @@ public class Tutorial12Callbacks : ScriptableObject
     //b
     public bool B1_OldEnemies()
     {
-        return
-            CommonTutorialCallbacks.GameObjectsStartingWith("Seek").Count == 0 &&
-            CommonTutorialCallbacks.GameObjectsStartingWith("Flee").Count == 0 &&
-            CommonTutorialCallbacks.GameObjectsStartingWith("Purs").Count == 0 &&
-            CommonTutorialCallbacks.GameObjectsStartingWith("Wand").Count == 0 &&
-            CommonTutorialCallbacks.GameObjectsStartingWith("Complex").Count == 0;
+        if (CommonTutorialCallbacks.GameObjectsStartingWith("Seek").Count > 0) { Criterion.globalLastKnownError = "Delete the 'Seeker' or related GameObjects."; return false; }
+        if (CommonTutorialCallbacks.GameObjectsStartingWith("Flee").Count > 0) { Criterion.globalLastKnownError = "Delete the 'Fleer' or related GameObjects."; return false; }
+        if (CommonTutorialCallbacks.GameObjectsStartingWith("Purs").Count > 0) { Criterion.globalLastKnownError = "Delete the 'Pursuer' or related GameObjects."; return false; }
+        if (CommonTutorialCallbacks.GameObjectsStartingWith("Wand").Count > 0) { Criterion.globalLastKnownError = "Delete the 'Wanderer' or related GameObjects."; return false; }
+        if (CommonTutorialCallbacks.GameObjectsStartingWith("Complex").Count > 0) { Criterion.globalLastKnownError = "Delete the 'ComplexAlmostHumanLikeAI' or related GameObjects."; return false; }
+        return true;
     }
     public bool B2_BasicSpawnerOnSpawner()
     {
-        return CommonTutorialCallbacks.GameObjectContainsScriptByName("BasicSpawner", "Spawner");
+        if (!CommonTutorialCallbacks.GameObjectContainsScriptByName("BasicSpawner", "Spawner")) { Criterion.globalLastKnownError = "'Spawner' GameObject is missing 'BasicSpawner' script."; return false; }
+        return true;
     }
 
     //step 23
@@ -403,7 +404,10 @@ public class Tutorial12Callbacks : ScriptableObject
     }
     public bool BallMovedDistance()
     {
-        return (GameObject.Find("Ball").transform.position - initialPos).magnitude > 1;
+        var ball = GameObject.Find("Ball");
+        if (ball == null) { Criterion.globalLastKnownError = "Could not find 'Ball' GameObject."; return false; }
+        if ((ball.transform.position - initialPos).magnitude <= 1) { Criterion.globalLastKnownError = "Ball has not moved far enough from initial position."; return false; }
+        return true;
     }
 
     //step 25
@@ -419,8 +423,14 @@ public class Tutorial12Callbacks : ScriptableObject
     }
     public bool SpriteModified()
     {
-        var sr = GameObject.Find("Ball").GetComponent<SpriteRenderer>();
-        return initialColor.Equals(sr.color) == false && (initialFlip != sr.flipX || initialFlipY != sr.flipY);
+        var ball = GameObject.Find("Ball");
+        if (ball == null) { Criterion.globalLastKnownError = "Could not find 'Ball' GameObject."; return false; }
+
+        var sr = ball.GetComponent<SpriteRenderer>();
+        if (sr == null) { Criterion.globalLastKnownError = "'Ball' is missing SpriteRenderer."; return false; }
+
+        if (initialColor.Equals(sr.color) && (initialFlip == sr.flipX && initialFlipY == sr.flipY)) { Criterion.globalLastKnownError = "Modify the Sprite Renderer color or flip state."; return false; }
+        return true;
     }
 
     //step 26
@@ -433,39 +443,47 @@ public class Tutorial12Callbacks : ScriptableObject
                 ballCount++;
             }
         }
-        return ballCount >= requiredCount;
+        if (ballCount < requiredCount) { Criterion.globalLastKnownError = $"Found {ballCount} balls, need {requiredCount}."; return false; }
+        return true;
     }
 
     //step 27
     public bool AllBallsGreen()
     {
         var all = GameObject.FindObjectsByType <GameObject>(FindObjectsSortMode.None);
-        Debug.Log(all.Length);
+        //Debug.Log(all.Length);
+        bool foundBall = false;
         for (int i=0; i<all.Length; i++) {
             if (all[i].name.StartsWith("Ball")) {
+                foundBall = true;
                 var sr = all[i].GetComponent<SpriteRenderer>();
-                Debug.Log(sr.color);
-                if (sr.color.Equals(Color.green) == false) return false;
+                //Debug.Log(sr.color);
+                if (sr.color.Equals(Color.green) == false) { Criterion.globalLastKnownError = $"Ball '{all[i].name}' is not green."; return false; }
             }
         }
+        if (!foundBall) { Criterion.globalLastKnownError = "No balls found."; return false; }
         return true;
     }
     //step 29
     public bool AtLeastOneRigidbody()
     {
         var all = GameObject.FindObjectsByType <Rigidbody2D>(FindObjectsSortMode.None);
-        return all.Length > 0; 
+        if (all.Length == 0) { Criterion.globalLastKnownError = "No Rigidbody2D found in the scene."; return false; }
+        return true; 
     }
     //step 36
     public bool AllBallsHaveCircleColliders() 
     {
         var all = GameObject.FindObjectsByType <GameObject>(FindObjectsSortMode.None);
+        bool foundBall = false;
         for (int i=0; i<all.Length; i++) {
             if (all[i].name.StartsWith("Ball")) {
+                foundBall = true;
                 var c = all[i].GetComponent<CircleCollider2D>();
-                if (c == null) return false;
+                if (c == null) { Criterion.globalLastKnownError = $"Ball '{all[i].name}' is missing CircleCollider2D."; return false; }
             }
         }
+        if (!foundBall) { Criterion.globalLastKnownError = "No balls found."; return false; }
         return true;
     }
 
@@ -496,55 +514,49 @@ public class Tutorial12Callbacks : ScriptableObject
     public bool I1_ReplaceComponent()
     {
         var spawner = GameObject.Find("Spawner");
-        if (spawner == null) return false;
+        if (spawner == null) { Criterion.globalLastKnownError = "Could not find 'Spawner' GameObject."; return false; }
 
         var moveNormal = spawner.GetComponent("MoveBetweenTwoPoints");
         var moveCurve = spawner.GetComponent("MoveBetweenTwoPointsCurve");
 
-        return
-            moveNormal == null &&
-            moveCurve != null &&
-            DoesFieldContainSceneObject("Spawner", "MoveBetweenTwoPointsCurve", "start", "SpawnerStart") &&
-            DoesFieldContainSceneObject("Spawner", "MoveBetweenTwoPointsCurve", "end", "SpawnerEnd");
+        if (moveNormal != null) { Criterion.globalLastKnownError = "Remove 'MoveBetweenTwoPoints' script from 'Spawner'."; return false; }
+        if (moveCurve == null) { Criterion.globalLastKnownError = "Add 'MoveBetweenTwoPointsCurve' script to 'Spawner'."; return false; }
+
+        if (!DoesFieldContainSceneObject("Spawner", "MoveBetweenTwoPointsCurve", "start", "SpawnerStart")) { Criterion.globalLastKnownError = "'MoveBetweenTwoPointsCurve' Start field should be 'SpawnerStart'."; return false; }
+        if (!DoesFieldContainSceneObject("Spawner", "MoveBetweenTwoPointsCurve", "end", "SpawnerEnd")) { Criterion.globalLastKnownError = "'MoveBetweenTwoPointsCurve' End field should be 'SpawnerEnd'."; return false; }
+
+        return true;
 
     }
     public bool I2_CurvePoints()
     {
         var curve = GetValueOfFieldOnComponentByName<AnimationCurve>("Spawner", "MoveBetweenTwoPointsCurve", "curve");
         //Debug.Log(curve);
-        if (curve == null) return false;
+        if (curve == null) { Criterion.globalLastKnownError = "Could not find 'curve' field."; return false; }
 
         //Debug.Log(string.Join("|", curve.keys.ToList().Select(k => k.time + "," + k.value + "," + k.inTangent + "," + k.inWeight + "," + k.outTangent + "," + k.outWeight)));
         //0,0,0,0,0,0|1,1,0,0,0,0
 
-        if (curve.keys.Count() != 2) return false;
+        if (curve.keys.Count() != 2) { Criterion.globalLastKnownError = "Animation Curve must have exactly 2 keys."; return false; }
 
-        return
-            curve.keys[0].time.Equals(0) &&
-            curve.keys[0].value.Equals(0) &&
-            /*curve.keys[0].inTangent.Equals(0) && //cbf checking these, even tho they wil just be zeros
-            curve.keys[0].inWeight.Equals(0) &&
-            curve.keys[0].outTangent.Equals(0) &&
-            curve.keys[0].outWeight.Equals(0) &&*/
-            curve.keys[1].time.Equals(1) &&
-            curve.keys[1].value.Equals(1);/* &&
-            curve.keys[1].inTangent.Equals(0) &&
-            curve.keys[1].inWeight.Equals(0) &&
-            curve.keys[1].outTangent.Equals(0) &&
-            curve.keys[1].outWeight.Equals(0) &&*/
+        if (!curve.keys[0].time.Equals(0) || !curve.keys[0].value.Equals(0)) { Criterion.globalLastKnownError = "First key should be at (0, 0)."; return false; }
+        if (!curve.keys[1].time.Equals(1) || !curve.keys[1].value.Equals(1)) { Criterion.globalLastKnownError = "Second key should be at (1, 1)."; return false; }
+        return true;
     }
     public bool I6_CurveLoop()
     {
         var curve = GetValueOfFieldOnComponentByName<AnimationCurve>("Spawner", "MoveBetweenTwoPointsCurve", "curve");
-        if (curve == null) return false;
+        if (curve == null) { Criterion.globalLastKnownError = "Could not find 'curve' field."; return false; }
 
-        return curve.postWrapMode.Equals(WrapMode.Loop);
+        if (!curve.postWrapMode.Equals(WrapMode.Loop)) { Criterion.globalLastKnownError = "Animation Curve Wrap Mode should be 'Loop'."; return false; }
+        return true;
     }
     public bool I6_CurvePingPong()
     {
         var curve = GetValueOfFieldOnComponentByName<AnimationCurve>("Spawner", "MoveBetweenTwoPointsCurve", "curve");
-        if (curve == null) return false;
+        if (curve == null) { Criterion.globalLastKnownError = "Could not find 'curve' field."; return false; }
 
-        return curve.postWrapMode.Equals(WrapMode.PingPong);
+        if (!curve.postWrapMode.Equals(WrapMode.PingPong)) { Criterion.globalLastKnownError = "Animation Curve Wrap Mode should be 'Ping Pong'."; return false; }
+        return true;
     }
 }

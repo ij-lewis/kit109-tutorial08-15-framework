@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Callback:
     _target: {fileID: 11400000, guid: 677113b652547b94fb7b68b22d03ed92, type: 2}
-    _methodName: B1SpriteMode
+    _methodName: B1_SpriteMode
     _args: []
     _dynamic: 0
     _typeName: Unity.Tutorials.Core.Editor.ArbitraryCriterion+BoolCallback, Unity.Tutorials.Core.Editor,

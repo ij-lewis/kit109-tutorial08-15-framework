@@ -26,29 +26,33 @@ public class Tutorial14Callbacks : ScriptableObject
     //b
     public bool B1_PostProcessingLayerComponent()
     {
-        return CommonTutorialCallbacks.GameObjectContainsScript<PostProcessLayer>("Main Camera");
+        if (!CommonTutorialCallbacks.GameObjectContainsScript<PostProcessLayer>("Main Camera")) { Criterion.globalLastKnownError = "'Main Camera' is missing 'PostProcessLayer' component."; return false; }
+        return true;
     }
     public bool B2_CameraLayer()
     {
         var cam = GameObject.Find("Main Camera");
-        if (cam == null) return false;
+        if (cam == null) { Criterion.globalLastKnownError = "Could not find 'Main Camera'."; return false; }
 
-        return cam.layer == LayerMask.NameToLayer("PostProcessingEffects");
+        if (cam.layer != LayerMask.NameToLayer("PostProcessingEffects")) { Criterion.globalLastKnownError = "'Main Camera' Layer must be 'PostProcessingEffects'."; return false; }
+        return true;
     }
     public bool B2_PostProcessingLayerLayer()
     {
         var pp = CommonTutorialCallbacks.GameObjectComponent<PostProcessLayer>("Main Camera");
-        if (pp == null) return false;
+        if (pp == null) { Criterion.globalLastKnownError = "'Main Camera' is missing 'PostProcessLayer' component."; return false; }
 
         //mask == (mask | (1 << layer));
-        return pp.volumeLayer == (pp.volumeLayer | (1 << LayerMask.NameToLayer("PostProcessingEffects")));
+        if (pp.volumeLayer != (pp.volumeLayer | (1 << LayerMask.NameToLayer("PostProcessingEffects")))) { Criterion.globalLastKnownError = "'PostProcessLayer' Volume Layer must include 'PostProcessingEffects'."; return false; }
+        return true;
     }
     public bool B3_PostProcessingVolumeComponent()
     {
         var pv = CommonTutorialCallbacks.GameObjectComponent<PostProcessVolume>("Main Camera");
-        if (pv == null) return false;
+        if (pv == null) { Criterion.globalLastKnownError = "'Main Camera' is missing 'PostProcessVolume' component."; return false; }
 
-        return pv.isGlobal;
+        if (!pv.isGlobal) { Criterion.globalLastKnownError = "'PostProcessVolume' Is Global must be checked."; return false; }
+        return true;
     }
     static PostProcessProfile GlobalProfile()
     {
@@ -56,42 +60,44 @@ public class Tutorial14Callbacks : ScriptableObject
     }
     public bool B4_GlobalProfile()
     {
-        return GlobalProfile() != null;
+        if (GlobalProfile() == null) { Criterion.globalLastKnownError = "Could not find 'Global.asset' in 'Assets/Profiles'."; return false; }
+        return true;
     }
     public bool B5_VignetteEffect()
     {
         var profile = GlobalProfile();
-        if (profile == null) return false;
+        if (profile == null) { Criterion.globalLastKnownError = "Could not find 'Global' profile."; return false; }
 
-        return profile.HasSettings<Vignette>();
+        if (!profile.HasSettings<Vignette>()) { Criterion.globalLastKnownError = "'Global' profile must handle 'Vignette' effect."; return false; }
+        return true;
     }
     public bool B5_VignetteEffectIntensity()
     {
         var profile = GlobalProfile();
-        if (profile == null) return false;
+        if (profile == null) { Criterion.globalLastKnownError = "Could not find 'Global' profile."; return false; }
 
-        if (profile.HasSettings<Vignette>() == false) return false;
+        if (profile.HasSettings<Vignette>() == false) { Criterion.globalLastKnownError = "'Global' profile is missing 'Vignette' effect."; return false; }
 
         var settings = profile.GetSetting<Vignette>();
-        return
-            settings.intensity.overrideState.Equals(true) &&
-            settings.intensity.value.Equals(0.5f);
+        if (!settings.intensity.overrideState.Equals(true) || !Mathf.Approximately(settings.intensity.value, 0.5f)) { Criterion.globalLastKnownError = "'Vignette' Intensity must be 0.5."; return false; }
+        return true;
     }
 
     //c
     public bool C1_ColourGrading()
     {
         var profile = GlobalProfile();
-        if (profile == null) return false;
+        if (profile == null) { Criterion.globalLastKnownError = "Could not find 'Global' profile."; return false; }
 
-        return profile.HasSettings<ColorGrading>();
+        if (!profile.HasSettings<ColorGrading>()) { Criterion.globalLastKnownError = "'Global' profile must handle 'ColorGrading' effect."; return false; }
+        return true;
     }
     public bool C3_ColourGradingCurve()
     {
         var profile = GlobalProfile();
-        if (profile == null) return false;
+        if (profile == null) { Criterion.globalLastKnownError = "Could not find 'Global' profile."; return false; }
 
-        if (profile.HasSettings<ColorGrading>() == false) return false;
+        if (profile.HasSettings<ColorGrading>() == false) { Criterion.globalLastKnownError = "'Global' profile is missing 'ColorGrading' effect."; return false; }
 
         var settings = profile.GetSetting<ColorGrading>();
         //0,0|0.6350574,0|0.7011494,1|0.7729885,0
@@ -99,44 +105,45 @@ public class Tutorial14Callbacks : ScriptableObject
 
         var curve = settings.hueVsSatCurve.value.curve;
 
-        return
-            settings.hueVsSatCurve.overrideState.Equals(true) &&
-            //curve.keys.Length >= 4 &&
-            curve.keys.Count(k => k.value == 0) >= 2 &&
-            curve.keys.Count(k => k.value == 1) == 1 &&
-            curve.keys.Count(k => k.time > 0.45f) >= 3;
-            /*
-            curve.keys.Any(k => k.time == 0 && k.value == 0) &&
-            curve.keys.Any(k => k.time >= 0.5f && k.time < 0.65f && k.value == 0) &&
-            curve.keys.Any(k => k.time >= 0.5f && k.time < 0.75f && k.value == 1) &&
-            curve.keys.Any(k => k.time >= 0.65f && k.value < 0.85f && k.value == 0)*/;
+        if (!settings.hueVsSatCurve.overrideState.Equals(true)) { Criterion.globalLastKnownError = "'ColorGrading' Hue vs Saturation override must be enabled."; return false; }
+
+        //curve.keys.Length >= 4 &&
+        if (curve.keys.Count(k => k.value == 0) < 2) { Criterion.globalLastKnownError = "'ColorGrading' Curve needs at least 2 points at value 0."; return false; }
+        if (curve.keys.Count(k => k.value == 1) != 1) { Criterion.globalLastKnownError = "'ColorGrading' Curve needs exactly 1 point at value 1."; return false; }
+        if (curve.keys.Count(k => k.time > 0.45f) < 3) { Criterion.globalLastKnownError = "'ColorGrading' Curve needs at least 3 points in the second half."; return false; }
+        
+        return true;
     }
     public bool C4_Bloom()
     {
         var profile = GlobalProfile();
-        if (profile == null) return false;
+        if (profile == null) { Criterion.globalLastKnownError = "Could not find 'Global' profile."; return false; }
 
-        return profile.HasSettings<Bloom>();
+        if (!profile.HasSettings<Bloom>()) { Criterion.globalLastKnownError = "'Global' profile must handle 'Bloom' effect."; return false; }
+        return true;
     }
 
     //d
     public bool D1_Volume()
     {
-        return CommonTutorialCallbacks.GameObjectContainsScript<PostProcessVolume>("DarkArea");
+        if (!CommonTutorialCallbacks.GameObjectContainsScript<PostProcessVolume>("DarkArea")) { Criterion.globalLastKnownError = "'DarkArea' is missing 'PostProcessVolume' component."; return false; }
+        return true;
     }
     public bool D1_VolumePosition()
     {
         var t = CommonTutorialCallbacks.GameObjectComponent<Transform>("DarkArea");
-        if (t == null) return false;
+        if (t == null) { Criterion.globalLastKnownError = "Could not find 'DarkArea' GameObject."; return false; }
 
-        return t.position != Vector3.zero && t.position.z.Equals(0);
+        if (t.position == Vector3.zero || !Mathf.Approximately(t.position.z, 0)) { Criterion.globalLastKnownError = "'DarkArea' should be positioned away from origin, but with Z=0."; return false; }
+        return true;
     }
     public bool D1_VolumeLayer()
     {
         var cam = GameObject.Find("DarkArea");
-        if (cam == null) return false;
+        if (cam == null) { Criterion.globalLastKnownError = "Could not find 'DarkArea' GameObject."; return false; }
 
-        return cam.layer == LayerMask.NameToLayer("PostProcessingEffects");
+        if (cam.layer != LayerMask.NameToLayer("PostProcessingEffects")) { Criterion.globalLastKnownError = "'DarkArea' Layer must be 'PostProcessingEffects'."; return false; }
+        return true;
     }
     static PostProcessProfile DarkAreaProfile()
     {
@@ -144,82 +151,91 @@ public class Tutorial14Callbacks : ScriptableObject
     }
     public bool D2_DarkAreaProfile()
     {
-        return DarkAreaProfile() != null;
+        if (DarkAreaProfile() == null) { Criterion.globalLastKnownError = "Could not find 'DarkArea Profile.asset' in 'Assets/Profiles'."; return false; }
+        return true;
     }
     public bool D2_Global()
     {
         var pv = CommonTutorialCallbacks.GameObjectComponent<PostProcessVolume>("DarkArea");
-        if (pv == null) return false;
+        if (pv == null) { Criterion.globalLastKnownError = "'DarkArea' is missing 'PostProcessVolume' component."; return false; }
 
-        return pv.isGlobal;
+        if (!pv.isGlobal) { Criterion.globalLastKnownError = "'DarkArea' PostProcessVolume should be global (for now)."; return false; }
+        return true;
     }
     public bool D3_DarkAreaColorGrading()
     {
         var profile = DarkAreaProfile();
-        if (profile == null) return false;
+        if (profile == null) { Criterion.globalLastKnownError = "Could not find 'DarkArea Profile'."; return false; }
 
-        if (profile.HasSettings<ColorGrading>() == false) return false;
+        if (profile.HasSettings<ColorGrading>() == false) { Criterion.globalLastKnownError = "'DarkArea Profile' is missing 'ColorGrading' effect."; return false; }
 
         var settings = profile.GetSetting<ColorGrading>();
-        return
-            settings.temperature.overrideState.Equals(true) &&
-            settings.temperature.value.Equals(-40) &&
-            settings.gamma.overrideState.Equals(true) &&
-            settings.gamma.value.w < -0.4f;
+        
+        if (!settings.temperature.overrideState.Equals(true) || !Mathf.Approximately(settings.temperature.value, -40)) { Criterion.globalLastKnownError = "'ColorGrading' Temperature must be -40."; return false; }
+        if (!settings.gamma.overrideState.Equals(true) || settings.gamma.value.w >= -0.4f) { Criterion.globalLastKnownError = "'ColorGrading' Gamma W must be less than -0.4."; return false; }
+        
+        return true;
     }
     public bool D4_NotGlobal()
     {
         var pv = CommonTutorialCallbacks.GameObjectComponent<PostProcessVolume>("DarkArea");
-        if (pv == null) return false;
+        if (pv == null) { Criterion.globalLastKnownError = "'DarkArea' is missing 'PostProcessVolume' component."; return false; }
 
-        return pv.isGlobal.Equals(false);
+        if (pv.isGlobal) { Criterion.globalLastKnownError = "Uncheck 'Is Global' on 'DarkArea' PostProcessVolume."; return false; }
+        return true;
     }
     public bool D4_Trigger()
     {
         var pp = CommonTutorialCallbacks.GameObjectComponent<PostProcessLayer>("Main Camera");
-        if (pp == null) return false;
+        if (pp == null) { Criterion.globalLastKnownError = "'Main Camera' is missing 'PostProcessLayer' component."; return false; }
 
         var player = GameObject.Find("Player");
-        if (player == null) return false;
+        if (player == null) { Criterion.globalLastKnownError = "Could not find 'Player'."; return false; }
 
-        return pp.volumeTrigger == player.transform;
+        if (pp.volumeTrigger != player.transform) { Criterion.globalLastKnownError = "Assign 'Player' to 'PostProcessLayer' Trigger."; return false; }
+        return true;
     }
     public bool D5_BlendDistance()
     {
         var pv = CommonTutorialCallbacks.GameObjectComponent<PostProcessVolume>("DarkArea");
-        if (pv == null) return false;
+        if (pv == null) { Criterion.globalLastKnownError = "'DarkArea' is missing 'PostProcessVolume'."; return false; }
 
-        return pv.blendDistance.Equals(0.5f);
+        if (!Mathf.Approximately(pv.blendDistance, 0.5f)) { Criterion.globalLastKnownError = "'DarkArea' Blend Distance must be 0.5."; return false; }
+        return true;
     }
     
     //e
     public bool E1_ScareRadius()
     {
         var radius = GameObject.Find("ScareRadius");
-        if (radius == null) return false;
+        if (radius == null) { Criterion.globalLastKnownError = "Could not find 'ScareRadius' GameObject."; return false; }
 
         var ai = GameObject.Find("ComplexAlmostHumanLikeAI");
-        if (ai == null) return false;
+        if (ai == null) { Criterion.globalLastKnownError = "Could not find 'ComplexAlmostHumanLikeAI' GameObject."; return false; }
 
-        return
-            radius.transform.parent == ai.transform &&
-            radius.transform.localPosition == Vector3.zero;
+        if (radius.transform.parent != ai.transform) { Criterion.globalLastKnownError = "'ScareRadius' must be a child of 'ComplexAlmostHumanLikeAI'."; return false; }
+        if (radius.transform.localPosition != Vector3.zero) { Criterion.globalLastKnownError = "'ScareRadius' Position must be (0, 0, 0)."; return false; }
+        return true;
     }
     public bool E1_RadiusSphere()
     {
         var sphere = CommonTutorialCallbacks.GameObjectComponent<SphereCollider>("ScareRadius");
-        return sphere != null && sphere.radius.Equals(2);
+        if (sphere == null) { Criterion.globalLastKnownError = "'ScareRadius' is missing SphereCollider."; return false; }
+        if (!Mathf.Approximately(sphere.radius, 2)) { Criterion.globalLastKnownError = "'ScareRadius' Radius must be 2."; return false; }
+        return true;
     }
     public bool E1_RadiusLayer()
     {
         var cam = GameObject.Find("ScareRadius");
-        if (cam == null) return false;
+        if (cam == null) { Criterion.globalLastKnownError = "Could not find 'ScareRadius' GameObject."; return false; }
 
-        return cam.layer == LayerMask.NameToLayer("PostProcessingEffects");
+        if (cam.layer != LayerMask.NameToLayer("PostProcessingEffects")) { Criterion.globalLastKnownError = "'ScareRadius' Layer must be 'PostProcessingEffects'."; return false; }
+        return true;
     }
     public bool E1_RadiusVolume()
     {
-        return CommonTutorialCallbacks.GameObjectContainsScript<PostProcessVolume>("ScareRadius");
+        if (!CommonTutorialCallbacks.GameObjectContainsScript<PostProcessVolume>("ScareRadius")) { Criterion.globalLastKnownError = "'ScareRadius' is missing 'PostProcessVolume' component."; return false; }
+        return true;
     }
     static PostProcessProfile ScareProfile()
     {
@@ -227,25 +243,26 @@ public class Tutorial14Callbacks : ScriptableObject
     }
     public bool E2_ScareProfile()
     {
-        return ScareProfile() != null;
+        if (ScareProfile() == null) { Criterion.globalLastKnownError = "Could not find 'ScareRadius Profile.asset' in 'Assets/Profiles'."; return false; }
+        return true;
     }
     public bool E2_ScareRadiusChromaticAberration()
     {
         var profile = ScareProfile();
-        if (profile == null) return false;
+        if (profile == null) { Criterion.globalLastKnownError = "Could not find 'ScareRadius Profile'."; return false; }
 
-        if (profile.HasSettings<ChromaticAberration>() == false) return false;
+        if (profile.HasSettings<ChromaticAberration>() == false) { Criterion.globalLastKnownError = "'ScareRadius Profile' is missing 'ChromaticAberration' effect."; return false; }
 
         var settings = profile.GetSetting<ChromaticAberration>();
-        return
-            settings.intensity.overrideState.Equals(true) &&
-            settings.intensity.value.Equals(0.5f);
+        if (!settings.intensity.overrideState.Equals(true) || !Mathf.Approximately(settings.intensity.value, 0.5f)) { Criterion.globalLastKnownError = "'ChromaticAberration' Intensity must be 0.5."; return false; }
+        return true;
     }
 
     //f
     public bool F1_PulseScript()
     {
-        return CommonTutorialCallbacks.GameObjectContainsScript<ChromaticAberrationPulse>("ScareRadius");
+        if (!CommonTutorialCallbacks.GameObjectContainsScript<ChromaticAberrationPulse>("ScareRadius")) { Criterion.globalLastKnownError = "'ScareRadius' is missing 'ChromaticAberrationPulse' script."; return false; }
+        return true;
     }
 }
 #endif

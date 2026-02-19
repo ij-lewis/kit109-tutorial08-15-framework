@@ -19,61 +19,66 @@ public class Tutorial08Callbacks : ScriptableObject
     }
 
     //b
-    public bool B1SpriteMode()
+    public bool B1_SpriteMode()
     {
         var merc = (TextureImporter)AssetImporter.GetAtPath("Assets/Mercenary.png");
-        if (merc == null) return false;
+        if (merc == null) { Criterion.globalLastKnownError = "Could not find 'Assets/Mercenary.png'."; return false; }
 
-        return merc.spriteImportMode == SpriteImportMode.Multiple;
+        if (merc.spriteImportMode != SpriteImportMode.Multiple) { Criterion.globalLastKnownError = "Sprite Mode is not set to 'Multiple'."; return false; }
+        return true;
     }
     public bool B1SpriteSlice()
     {
         var merc = (TextureImporter)AssetImporter.GetAtPath("Assets/Mercenary.png");
-        if (merc == null) return false;
+        if (merc == null) { Criterion.globalLastKnownError = "Could not find 'Assets/Mercenary.png'."; return false; }
 
 #pragma warning disable 0618
-        return merc.spritesheet.Count() == 8 * 6;
+        if (merc.spritesheet.Count() != 8 * 6) { Criterion.globalLastKnownError = "Sprite sheet is not sliced correctly. Expected 48 sprites."; return false; }
+        return true;
 #pragma warning restore 0618
     }
     public bool B1SpritePPU()
     {
         var merc = (TextureImporter)AssetImporter.GetAtPath("Assets/Mercenary.png");
-        if (merc == null) return false;
+        if (merc == null) { Criterion.globalLastKnownError = "Could not find 'Assets/Mercenary.png'."; return false; }
 
-        return merc.spritePixelsPerUnit == 32;
+        if (merc.spritePixelsPerUnit != 32) { Criterion.globalLastKnownError = "Pixels Per Unit is not 32."; return false; }
+        return true;
     }
     public bool B1SpriteFilter()
     {
         var merc = (TextureImporter)AssetImporter.GetAtPath("Assets/Mercenary.png");
-        if (merc == null) return false;
+        if (merc == null) { Criterion.globalLastKnownError = "Could not find 'Assets/Mercenary.png'."; return false; }
 
-        return merc.filterMode == FilterMode.Point;
+        if (merc.filterMode != FilterMode.Point) { Criterion.globalLastKnownError = "Filter Mode is not set to 'Point (no filter)'."; return false; }
+        return true;
     }
     public bool B2_B3_Anim(string name)
     {
         var a = AssetDatabase.LoadAssetAtPath<AnimationClip>("Assets/Animations/Walking/" + name + ".anim");
-        if (a == null) return false;
+        if (a == null) { Criterion.globalLastKnownError = $"Could not find animation 'Assets/Animations/Walking/{name}.anim'."; return false; }
 
         //check there are 4 sprites in the animation
         var bindings = AnimationUtility.GetObjectReferenceCurveBindings(a);
-        if (bindings.Count() != 1) return false;
+        if (bindings.Count() != 1) { Criterion.globalLastKnownError = $"Animation '{name}' should affect exactly one property (Sprite). Found {bindings.Count()}."; return false; }
 
         var binding = bindings[0];
         var curve = AnimationUtility.GetObjectReferenceCurve(a, binding);
-        if (curve.Count() != 4) return false;
+        if (curve.Count() != 4) { Criterion.globalLastKnownError = $"Animation '{name}' should have exactly 4 keyframes. Found {curve.Count()}."; return false; }
 
         return true;
     }
     public bool B5_NoMercs()
     {
-        return CommonTutorialCallbacks.GameObjectsStartingWith("Merc").Count == 0;
+        if (CommonTutorialCallbacks.GameObjectsStartingWith("Merc").Count != 0) { Criterion.globalLastKnownError = "Found 'Mercenary' GameObjects in the scene. Please delete them."; return false; }
+        return true;
     }
     public bool B5_NoAnimControllers()
     {
         for (var i = 0; i < 6*8; i++)
         {
             var a = AssetDatabase.LoadAssetAtPath<RuntimeAnimatorController>("Assets/Animations/Walking/Mercenary_" + i + ".controller");
-            if (a != null) return false;
+            if (a != null) { Criterion.globalLastKnownError = $"Found Animator Controller '{a.name}'. Please delete it."; return false; }
         }
         return true;
     }
@@ -86,7 +91,9 @@ public class Tutorial08Callbacks : ScriptableObject
 
     public bool C1_AnimController()
     {
-        return GetPlayerController();
+        var pc = GetPlayerController();
+        if (pc == null) { Criterion.globalLastKnownError = "Could not find 'Assets/Animations/PlayerController.controller'."; return false; }
+        return true;
     }
     static BlendTree GetBlendtree(string name)
     {
@@ -106,38 +113,42 @@ public class Tutorial08Callbacks : ScriptableObject
     }
     public bool C2_Walking()
     {
-        return GetWalkingBlendtree() != null;
+        if (GetWalkingBlendtree() == null) { Criterion.globalLastKnownError = "PlayerController does not have a 'Walking' state with a Blend Tree."; return false; }
+        return true;
     }
     public bool C3_BlendTreeMode()
     {
         var tree = GetWalkingBlendtree();
-        if (tree == null) return false;
+        if (tree == null) { Criterion.globalLastKnownError = "Could not find 'Walking' Blend Tree."; return false; }
 
-        return tree.blendType == BlendTreeType.SimpleDirectional2D;
+        if (tree.blendType != BlendTreeType.SimpleDirectional2D) { Criterion.globalLastKnownError = "Blend Tree Type is not 'Simple Directional 2D'."; return false; }
+        return true;
     }
     public bool C4_Parameter(string param)
     {
         var player = GetPlayerController();
-        if (player == null) return false;
+        if (player == null) { Criterion.globalLastKnownError = "PlayerController not found."; return false; }
 
         var ac = player as AnimatorController;
-        return ac.parameters.Any(p => p.name.Equals(param) && p.type == AnimatorControllerParameterType.Float);
+        if (!ac.parameters.Any(p => p.name.Equals(param) && p.type == AnimatorControllerParameterType.Float)) { Criterion.globalLastKnownError = $"PlayerController is missing Float parameter '{param}'."; return false; }
+        return true;
     }
     public bool C4_BlendParameters()
     {
 
         var tree = GetWalkingBlendtree();
-        if (tree == null) return false;
+        if (tree == null) { Criterion.globalLastKnownError = "Could not find 'Walking' Blend Tree."; return false; }
         
-        
-        return tree.blendParameter.Equals("XSpeed") && tree.blendParameterY.Equals("YSpeed");
+        if (!tree.blendParameter.Equals("XSpeed") || !tree.blendParameterY.Equals("YSpeed")) { Criterion.globalLastKnownError = "Blend Tree parameters should be 'XSpeed' and 'YSpeed'."; return false; }
+        return true;
     }
     public bool C5_MotionField()
     {
         var tree = GetWalkingBlendtree();
-        if (tree == null) return false;
+        if (tree == null) { Criterion.globalLastKnownError = "Could not find 'Walking' Blend Tree."; return false; }
 
-        return tree.children.Count() > 0;
+        if (tree.children.Count() == 0) { Criterion.globalLastKnownError = "Blend Tree has no motions added."; return false; }
+        return true;
 
     }
     public bool C5_C6_MotionField(string name, float x, float y)
@@ -154,6 +165,7 @@ public class Tutorial08Callbacks : ScriptableObject
             }
         }
 
+        Criterion.globalLastKnownError = $"Could not find motion '{name}' at position ({x}, {y}) in 'Walking' Blend Tree.";
             return false;
 
     }
@@ -161,43 +173,50 @@ public class Tutorial08Callbacks : ScriptableObject
     //d
     public bool D1_PlayerSprite()
     {
-        return CommonTutorialCallbacks.GameObjectComponent<SpriteRenderer>("Player");
+        if (!CommonTutorialCallbacks.GameObjectComponent<SpriteRenderer>("Player")) { Criterion.globalLastKnownError = "Player GameObject is missing a SpriteRenderer."; return false; }
+        return true;
     }
     public bool D1_PlayerRB()
     {
         var rb = CommonTutorialCallbacks.GameObjectComponent<Rigidbody2D>("Player");
-        if (rb == null) return false;
+        if (rb == null) { Criterion.globalLastKnownError = "Player GameObject is missing a Rigidbody2D."; return false; }
 
-        return rb.gravityScale == 0 && rb.constraints.HasFlag(RigidbodyConstraints2D.FreezeRotation);
+        if (rb.gravityScale != 0) { Criterion.globalLastKnownError = "Player Rigidbody2D Gravity Scale should be 0."; return false; }
+        if (!rb.constraints.HasFlag(RigidbodyConstraints2D.FreezeRotation)) { Criterion.globalLastKnownError = "Player Rigidbody2D should have 'Freeze Rotation' checked."; return false; }
+        return true;
 
     }
     public bool D1_PlayerAnimator()
     {
         var a = CommonTutorialCallbacks.GameObjectComponent<Animator>("Player");
-        if (a == null) return false;
+        if (a == null) { Criterion.globalLastKnownError = "Player GameObject is missing an Animator."; return false; }
 
         var ac = a.runtimeAnimatorController;
-        if (ac == null) return false;
+        if (ac == null) { Criterion.globalLastKnownError = "Player Animator is missing a Controller."; return false; }
 
-        return ac == GetPlayerController();
+        if (ac != GetPlayerController()) { Criterion.globalLastKnownError = "Player Animator Controller is not set to 'PlayerController'."; return false; }
+        return true;
     }
     public bool D1_Player8Way()
     {
-        return CommonTutorialCallbacks.GameObjectComponent<EightWayMovement>("Player");
+        if (!CommonTutorialCallbacks.GameObjectComponent<EightWayMovement>("Player")) { Criterion.globalLastKnownError = "Player GameObject is missing 'EightWayMovement' script."; return false; }
+        return true;
     }
     public bool D1_OrderInLayer()
     {
         var sr = CommonTutorialCallbacks.GameObjectComponent<SpriteRenderer>("Player");
-        if (sr == null) return false;
+        if (sr == null) { Criterion.globalLastKnownError = "Player GameObject is missing a SpriteRenderer."; return false; }
 
-        return sr.sortingOrder >= 1;
+        if (sr.sortingOrder < 1) { Criterion.globalLastKnownError = "Player SpriteRenderer Sorting Order must be at least 1."; return false; }
+        return true;
     }
     public bool D1_Tag()
     {
         var player = GameObject.Find("Player");
-        if (player == null) return false;
+        if (player == null) { Criterion.globalLastKnownError = "Could not find GameObject named 'Player'."; return false; }
 
-        return player.tag == "Player";
+        if (player.tag != "Player") { Criterion.globalLastKnownError = "Player GameObject tag is not set to 'Player'."; return false; }
+        return true;
     }
     public static BlendTree GetIdleBlendtree()
     {
@@ -209,11 +228,13 @@ public class Tutorial08Callbacks : ScriptableObject
     }
     public bool D3_Idle()
     {
-        return GetIdleBlendtree() != null;
+        if (GetIdleBlendtree() == null) { Criterion.globalLastKnownError = "PlayerController does not have an 'Idle' state with a Blend Tree."; return false; }
+        return true;
     }
     public bool D3_Shooting()
     {
-        return GetShootingBlendtree() != null;
+        if (GetShootingBlendtree() == null) { Criterion.globalLastKnownError = "PlayerController does not have a 'Shooting' state with a Blend Tree."; return false; }
+        return true;
     }
     public bool D4_MotionField_Idle()
     {
@@ -225,6 +246,7 @@ public class Tutorial08Callbacks : ScriptableObject
             var child = tree.children[i];
             if (child.motion == null || child.motion.name.Contains("_Idle") == false)
             {
+                Criterion.globalLastKnownError = "Idle Blend Tree should only contain motions with '_Idle' in their name.";
                 return false;
             }
         }
@@ -242,6 +264,7 @@ public class Tutorial08Callbacks : ScriptableObject
             var child = tree.children[i];
             if (child.motion == null || child.motion.name.Contains("_Shoot") == false)
             {
+                Criterion.globalLastKnownError = "Shooting Blend Tree should only contain motions with '_Shoot' in their name.";
                 return false;
             }
         }
@@ -253,32 +276,35 @@ public class Tutorial08Callbacks : ScriptableObject
     {
 
         var rac = GetPlayerController();
-        if (rac == null) return false;
+        if (rac == null) { Criterion.globalLastKnownError = "PlayerController not found."; return false; }
 
         var ac = rac as AnimatorController;
-        return ac.layers.First().stateMachine.anyStateTransitions.Any(t => t.destinationState != null && t.destinationState.name.Equals(toStateName));
+        if (!ac.layers.First().stateMachine.anyStateTransitions.Any(t => t.destinationState != null && t.destinationState.name.Equals(toStateName))) { Criterion.globalLastKnownError = $"Missing 'Any State' transition to '{toStateName}'."; return false; }
+        return true;
 
     }
     public bool D6_ParameterExists(string name)
     {
         var rac = GetPlayerController();
-        if (rac == null) return false;
+        if (rac == null) { Criterion.globalLastKnownError = "PlayerController not found."; return false; }
 
         var ac = rac as AnimatorController;
-        return ac.parameters.Any(p => p.name.Equals(name) && p.type == AnimatorControllerParameterType.Bool);
+        if (!ac.parameters.Any(p => p.name.Equals(name) && p.type == AnimatorControllerParameterType.Bool)) { Criterion.globalLastKnownError = $"PlayerController is missing Bool parameter '{name}'."; return false; }
+        return true;
     }
 
     public bool D6_AnyStateTransition(string toStateName, string conditionVar, bool conditionValue)
     {
 
         var rac = GetPlayerController();
-        if (rac == null) return false;
+        if (rac == null) { Criterion.globalLastKnownError = "PlayerController not found."; return false; }
 
         var ac = rac as AnimatorController;/*
         ac.layers.First().stateMachine.anyStateTransitions.First(t =>
             t.destinationState != null &&
             t.destinationState.name.Equals(toStateName)).conditions.ToList().ForEach(a => Debug.Log(a.parameter + "_" + a.threshold + "_" + a.mode+"_"+a));*/
-        return ac.layers.First().stateMachine.anyStateTransitions.Any(t => 
+        
+        var hasTransition = ac.layers.First().stateMachine.anyStateTransitions.Any(t => 
             t.destinationState != null &&
             t.destinationState.name.Equals(toStateName) &&
             t.conditions.Any(c =>
@@ -287,18 +313,27 @@ public class Tutorial08Callbacks : ScriptableObject
             )
         );
 
+        if (!hasTransition) { Criterion.globalLastKnownError = $"Missing transition from 'Any State' to '{toStateName}' with condition '{conditionVar}' is {conditionValue}."; return false; }
+        return true;
+
     }
     public bool D7_NoExitTime()
     {
         var rac = GetPlayerController();
-        if (rac == null) return false;
+        if (rac == null) { Criterion.globalLastKnownError = "PlayerController not found."; return false; }
 
         var ac = rac as AnimatorController;
-        return ac.layers.First().stateMachine.anyStateTransitions.All(t => t.hasExitTime.Equals(false) && t.duration.Equals(0) && t.canTransitionToSelf.Equals(false));
+        if (!ac.layers.First().stateMachine.anyStateTransitions.All(t => t.hasExitTime.Equals(false) && t.duration.Equals(0) && t.canTransitionToSelf.Equals(false)))
+        {
+             Criterion.globalLastKnownError = "One or more 'Any State' transitions have Exit Time, Duration > 0, or Can Transition To Self checked. Please uncheck them / set duration to 0.";
+             return false;
+        }
+        return true;
     }
     public bool E1_PlayerShooting()
     {
-        return CommonTutorialCallbacks.GameObjectComponent<PlayerShooting>("Player");
+        if (!CommonTutorialCallbacks.GameObjectComponent<PlayerShooting>("Player")) { Criterion.globalLastKnownError = "Player GameObject is missing 'PlayerShooting' script."; return false; }
+        return true;
     }
 }
 #endif
