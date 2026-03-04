@@ -261,7 +261,7 @@ public class Tutorial14Callbacks : ScriptableObject
     //f
     public bool F1_PulseScript()
     {
-        if (!CommonTutorialCallbacks.GameObjectContainsScript<ChromaticAberrationPulse>("ScareRadius")) { Criterion.globalLastKnownError = "'ScareRadius' is missing 'ChromaticAberrationPulse' script."; return false; }
+        if (!CommonTutorialCallbacks.GameObjectContainsScriptByName("ChromaticAberrationPulse", "ScareRadius")) { Criterion.globalLastKnownError = "'ScareRadius' is missing 'ChromaticAberrationPulse' script."; return false; }
         return true;
     }
 }

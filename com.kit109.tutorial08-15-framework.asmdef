@@ -1,0 +1,23 @@
+{
+    "name": "com.kit109.tutorial08-15-framework",
+    "rootNamespace": "",
+    "references": [
+        "Unity.Tutorials.Core",
+        "Unity.Tutorials.Core.Editor",
+        "Unity.Postprocessing.Runtime",
+        "Cinemachine",
+        "Unity.Timeline",
+        "Unity.2D.Tilemap.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

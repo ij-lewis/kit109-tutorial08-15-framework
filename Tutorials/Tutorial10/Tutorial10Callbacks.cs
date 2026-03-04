@@ -24,6 +24,7 @@ public class Tutorial10Callbacks : ScriptableObject
     //b
     public bool B1_Parent()
     {
+        var cam = GameObject.Find("Main Camera");
         if (cam == null) { Criterion.globalLastKnownError = "Could not find 'Main Camera'."; return false; }
 
         var player = GameObject.Find("Player");
@@ -158,13 +159,14 @@ public class Tutorial10Callbacks : ScriptableObject
     }
     public bool E4_TimelineLinked()
     {
-        var chest = CommonTutorialCallbacks.GameObjectComponent<TreasureOpen>("Chest");
+        var chest = CommonTutorialCallbacks.GameObjectComponentByName("TreasureOpen", "Chest");
         if (chest == null) { Criterion.globalLastKnownError = "'Chest' is missing 'TreasureOpen' script."; return false; }
 
         var director = CommonTutorialCallbacks.GameObjectComponent<PlayableDirector>("Chest");
         if (director == null) { Criterion.globalLastKnownError = "'Chest' is missing 'PlayableDirector' component."; return false; }
 
-        if (chest.directorToPlay == null || !chest.directorToPlay.Equals(director)) { Criterion.globalLastKnownError = "'TreasureOpen' script 'Director to Play' field is not assigned to the Chest's Director."; return false; }
+        var directorToPlay = Tutorial12Callbacks.GetValueOfFieldOnComponentByName<PlayableDirector>("Chest", "TreasureOpen", "directorToPlay");
+        if (directorToPlay == null || !directorToPlay.Equals(director)) { Criterion.globalLastKnownError = "'TreasureOpen' script 'Director to Play' field is not assigned to the Chest's Director."; return false; }
         return true;
     }
     public bool E4_PlayOnAwake()
@@ -455,7 +457,7 @@ public class Tutorial10Callbacks : ScriptableObject
     //g
     public bool G1_Player()
     {
-        if (!CommonTutorialCallbacks.GameObjectContainsScript<EightWayMovement>("Player")) { Criterion.globalLastKnownError = "Player GameObject is missing 'EightWayMovement' script."; return false; }
+        if (!CommonTutorialCallbacks.GameObjectContainsScriptByName("EightWayMovement", "Player")) { Criterion.globalLastKnownError = "Player GameObject is missing 'EightWayMovement' script."; return false; }
         return true;
     }
     public bool G1_PlayerPosition()
@@ -615,10 +617,11 @@ public class Tutorial10Callbacks : ScriptableObject
         var vcam = GetVcam2();
         if (vcam == null) { Criterion.globalLastKnownError = "Could not find 'ZoomedCamera'."; return false; }
 
-        var script = CommonTutorialCallbacks.GameObjectComponent<CharacterZoomZoneScript>("CharacterZoomZone");
+        var script = CommonTutorialCallbacks.GameObjectComponentByName("CharacterZoomZoneScript", "CharacterZoomZone");
         if (script == null) { Criterion.globalLastKnownError = "Could not find 'CharacterZoomZone' GameObject/Script."; return false; }
 
-        if (script.virtualCameraToActivate == null || !script.virtualCameraToActivate.Equals(vcam)) { Criterion.globalLastKnownError = "'CharacterZoomZone' script should trigger 'ZoomedCamera'."; return false; }
+        var virtualCameraToActivate = Tutorial12Callbacks.GetValueOfFieldOnComponentByName<CinemachineVirtualCamera>("CharacterZoomZone", "CharacterZoomZoneScript", "virtualCameraToActivate");
+        if (virtualCameraToActivate == null || !virtualCameraToActivate.Equals(vcam)) { Criterion.globalLastKnownError = "'CharacterZoomZone' script should trigger 'ZoomedCamera'."; return false; }
         return true;
     }
 }

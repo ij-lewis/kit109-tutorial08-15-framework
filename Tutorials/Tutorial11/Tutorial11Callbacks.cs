@@ -25,18 +25,19 @@ public class Tutorial11Callbacks : ScriptableObject
     //b
     public bool B2_SeekScript()
     {
-        if (!CommonTutorialCallbacks.GameObjectContainsScript<Seek>("Seeker")) { Criterion.globalLastKnownError = "'Seeker' GameObject is missing 'Seek' script."; return false; }
+        if (!CommonTutorialCallbacks.GameObjectContainsScriptByName("Seek", "Seeker")) { Criterion.globalLastKnownError = "'Seeker' GameObject is missing 'Seek' script."; return false; }
         return true;
     }
     public bool B2_SeekTarget()
     {
-        var seekScript = CommonTutorialCallbacks.GameObjectComponent<Seek>("Seeker");
+        var seekScript = CommonTutorialCallbacks.GameObjectComponentByName("Seek", "Seeker");
         if (seekScript == null) { Criterion.globalLastKnownError = "'Seeker' GameObject is missing 'Seek' script."; return false; }
 
         var player = GameObject.Find("Player");
         if (player == null) { Criterion.globalLastKnownError = "Could not find 'Player' GameObject."; return false; }
 
-        if (seekScript.target != player.transform) { Criterion.globalLastKnownError = "'Seek' script target is not set to 'Player'."; return false; }
+        var targetTransform = Tutorial12Callbacks.GetValueOfFieldOnComponentByName<Transform>("Seek", "Seeker", "target");
+        if (targetTransform != player.transform) { Criterion.globalLastKnownError = "'Seek' script target is not set to 'Player'."; return false; }
         return true;
     }
 
@@ -61,7 +62,7 @@ public class Tutorial11Callbacks : ScriptableObject
 
         //have to muck around with reflection here, because flee doesnt exist in base proj
         var fleeType = fleeScript.GetType();
-        if (fleeType.BaseType != typeof(Mover)) { Criterion.globalLastKnownError = "'Flee' script should inherit from 'Mover'."; return false; }
+        if (fleeType.BaseType.Name != "Mover") { Criterion.globalLastKnownError = "'Flee' script should inherit from 'Mover'."; return false; }
         return true;
     }
     public bool C6_FleeTarget()
@@ -117,7 +118,7 @@ public class Tutorial11Callbacks : ScriptableObject
         var fixedUpdateFunc = pursuitType.GetMethod("FixedUpdate", BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
         if (fixedUpdateFunc == null) { Criterion.globalLastKnownError = "'Pursuit' script is missing 'FixedUpdate' method."; return false; }
 
-        if (!((targetField.FieldType == typeof(Transform) || targetField.FieldType == typeof(Rigidbody2D) || targetField.FieldType == typeof(Mover)) && fixedUpdateFunc.ReturnType == typeof(void)))
+        if (!((targetField.FieldType == typeof(Transform) || targetField.FieldType == typeof(Rigidbody2D) || targetField.FieldType.Name == "Mover") && fixedUpdateFunc.ReturnType == typeof(void)))
         {
              Criterion.globalLastKnownError = "'Pursuit' targets should be Transform/Rigidbody2D/Mover and FixedUpdate should return void.";
              return false;
@@ -169,7 +170,7 @@ public class Tutorial11Callbacks : ScriptableObject
     //e
     public bool E1_WandererScript()
     {
-        if (!CommonTutorialCallbacks.GameObjectContainsScript<Wandering>("Wanderer")) { Criterion.globalLastKnownError = "'Wanderer' GameObject is missing 'Wandering' script."; return false; }
+        if (!CommonTutorialCallbacks.GameObjectContainsScriptByName("Wandering", "Wanderer")) { Criterion.globalLastKnownError = "'Wanderer' GameObject is missing 'Wandering' script."; return false; }
         return true;
     }
 
@@ -551,11 +552,14 @@ public class Tutorial11Callbacks : ScriptableObject
         var radius = GetRadius();
         if (radius == null) { Criterion.globalLastKnownError = "Radius object not found."; return false; }
 
-        var triggerScript = radius.GetComponent<SetAnimatorBooleanOnTriggerStay>();
+        var triggerScript = radius.GetComponent("SetAnimatorBooleanOnTriggerStay");
         if (triggerScript == null) { Criterion.globalLastKnownError = "'Radius' object is missing 'SetAnimatorBooleanOnTriggerStay' script."; return false; }
 
-        if (triggerScript.booleanName != "PlayerIsNear") { Criterion.globalLastKnownError = "'SetAnimatorBooleanOnTriggerStay' Boolean Name should be 'PlayerIsNear'."; return false; }
-        if (!triggerScript.applyToOther) { Criterion.globalLastKnownError = "'SetAnimatorBooleanOnTriggerStay' 'Apply To Other' should be checked."; return false; }
+        var booleanName = (string)triggerScript.GetType().GetField("booleanName", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance).GetValue(triggerScript);
+        var applyToOther = (bool)triggerScript.GetType().GetField("applyToOther", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance).GetValue(triggerScript);
+
+        if (booleanName != "PlayerIsNear") { Criterion.globalLastKnownError = "'SetAnimatorBooleanOnTriggerStay' Boolean Name should be 'PlayerIsNear'."; return false; }
+        if (!applyToOther) { Criterion.globalLastKnownError = "'SetAnimatorBooleanOnTriggerStay' 'Apply To Other' should be checked."; return false; }
         return true;
     }
     public bool F8_Radius_Layer()
@@ -568,11 +572,14 @@ public class Tutorial11Callbacks : ScriptableObject
     }
     public bool F9_ScaredOfPlayer()
     {
-        var triggerScript = CommonTutorialCallbacks.GameObjectComponent<SetAnimatorBooleanOnInput>(ComplexAlmostHumanLikeAI);
+        var triggerScript = CommonTutorialCallbacks.GameObjectComponentByName("SetAnimatorBooleanOnInput", ComplexAlmostHumanLikeAI);
         if (triggerScript == null) { Criterion.globalLastKnownError = $"'ComplexAlmostHumanLikeAI' is missing 'SetAnimatorBooleanOnInput' script."; return false; }
 
-        if (triggerScript.animatorBoolean != "IsScaredOfPlayer") { Criterion.globalLastKnownError = "'SetAnimatorBooleanOnInput' Animator Boolean should be 'IsScaredOfPlayer'."; return false; }
-        if (triggerScript.key != KeyCode.Space) { Criterion.globalLastKnownError = "'SetAnimatorBooleanOnInput' Key should be 'Space'."; return false; }
+        var animatorBoolean = (string)triggerScript.GetType().GetField("animatorBoolean", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance).GetValue(triggerScript);
+        var key = (KeyCode)triggerScript.GetType().GetField("key", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance).GetValue(triggerScript);
+
+        if (animatorBoolean != "IsScaredOfPlayer") { Criterion.globalLastKnownError = "'SetAnimatorBooleanOnInput' Animator Boolean should be 'IsScaredOfPlayer'."; return false; }
+        if (key != KeyCode.Space) { Criterion.globalLastKnownError = "'SetAnimatorBooleanOnInput' Key should be 'Space'."; return false; }
         return true;
     }
     public bool F10_MultipleAI()
@@ -597,19 +604,27 @@ public class Tutorial11Callbacks : ScriptableObject
         var objs = CommonTutorialCallbacks.GameObjectsStartingWith("Node");
         foreach (var node in objs)
         {
-            var nodeScript = node.GetComponent<PathNode>();
+            var nodeScript = node.GetComponent("PathNode");
             if (nodeScript == null) continue; //probably just the node generate or "nodes" parent
 
-            if (nodeScript.connections == null || nodeScript.connections.Count == 0)
+            var connectionsField = nodeScript.GetType().GetField("connections", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance);
+            if (connectionsField == null) continue;
+            var connections = connectionsField.GetValue(nodeScript) as System.Collections.IList;
+
+            if (connections == null || connections.Count == 0)
             {
                 //check to see if any other nodes are connected to us
                 bool connectedToUs = false;
                 foreach (var node2 in objs)
                 {
-                    var nodeScript2 = node2.GetComponent<PathNode>();
+                    var nodeScript2 = node2.GetComponent("PathNode");
                     if (nodeScript2 == null) continue; //probably just the node generate or "nodes" parent
 
-                    if (nodeScript2.connections != null && nodeScript2.connections.Contains(nodeScript))
+                    var connectionsField2 = nodeScript2.GetType().GetField("connections", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance);
+                    if (connectionsField2 == null) continue;
+                    var connections2 = connectionsField2.GetValue(nodeScript2) as System.Collections.IList;
+
+                    if (connections2 != null && connections2.Contains(nodeScript))
                     {
                         connectedToUs = true;
                         break;

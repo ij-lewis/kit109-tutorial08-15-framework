@@ -19,7 +19,7 @@ public class Tutorial08Callbacks : ScriptableObject
     }
 
     //b
-    public bool B1_SpriteMode()
+    public bool B1SpriteMode()
     {
         var merc = (TextureImporter)AssetImporter.GetAtPath("Assets/Mercenary.png");
         if (merc == null) { Criterion.globalLastKnownError = "Could not find 'Assets/Mercenary.png'."; return false; }
@@ -199,7 +199,7 @@ public class Tutorial08Callbacks : ScriptableObject
     }
     public bool D1_Player8Way()
     {
-        if (!CommonTutorialCallbacks.GameObjectComponent<EightWayMovement>("Player")) { Criterion.globalLastKnownError = "Player GameObject is missing 'EightWayMovement' script."; return false; }
+        if (!CommonTutorialCallbacks.GameObjectComponentByName("EightWayMovement", "Player")) { Criterion.globalLastKnownError = "Player GameObject is missing 'EightWayMovement' script."; return false; }
         return true;
     }
     public bool D1_OrderInLayer()
@@ -332,7 +332,7 @@ public class Tutorial08Callbacks : ScriptableObject
     }
     public bool E1_PlayerShooting()
     {
-        if (!CommonTutorialCallbacks.GameObjectComponent<PlayerShooting>("Player")) { Criterion.globalLastKnownError = "Player GameObject is missing 'PlayerShooting' script."; return false; }
+        if (!CommonTutorialCallbacks.GameObjectComponentByName("PlayerShooting", "Player")) { Criterion.globalLastKnownError = "Player GameObject is missing 'PlayerShooting' script."; return false; }
         return true;
     }
 }

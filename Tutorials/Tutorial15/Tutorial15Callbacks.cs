@@ -69,7 +69,7 @@ public class Tutorial15Callbacks : ScriptableObject
     //b
     public bool B3_RaycastMouseScript()
     {
-        if (!CommonTutorialCallbacks.GameObjectContainsScript<RaycastAtMouseOnClick>("Main Camera")) { Criterion.globalLastKnownError = "'Main Camera' is missing 'RaycastAtMouseOnClick' script."; return false; }
+        if (!CommonTutorialCallbacks.GameObjectContainsScriptByName("RaycastAtMouseOnClick", "Main Camera")) { Criterion.globalLastKnownError = "'Main Camera' is missing 'RaycastAtMouseOnClick' script."; return false; }
         return true;
     }
 
@@ -86,10 +86,10 @@ public class Tutorial15Callbacks : ScriptableObject
     //d
     public bool D1_RaycastToMouseScript()
     {
-        var raycastToMouse = CommonTutorialCallbacks.GameObjectComponent<RaycastToMouse>("Player");
+        var raycastToMouse = CommonTutorialCallbacks.GameObjectComponentByName("RaycastToMouse", "Player");
         if (raycastToMouse == null) { Criterion.globalLastKnownError = "'Player' is missing 'RaycastToMouse' script."; return false; }
 
-        var layerMask = raycastToMouse.layerMask;
+        var layerMask = Tutorial12Callbacks.GetValueOfFieldOnComponentByName<LayerMask>("Player", "RaycastToMouse", "layerMask");
         //Debug.Log(layerMask.value+" "+ (((1 << LayerMask.NameToLayer("Enemies")) | (1 << LayerMask.NameToLayer("Walls"))))+" "+(layerMask == ((1 << LayerMask.NameToLayer("Enemies")) | (1 << LayerMask.NameToLayer("Walls")))));
         if (layerMask != ((1 << LayerMask.NameToLayer("Enemies")) | (1 << LayerMask.NameToLayer("Walls")))) { Criterion.globalLastKnownError = "'RaycastToMouse' LayerMask must be 'Enemies' and 'Walls'."; return false; }
         return true;
@@ -98,10 +98,10 @@ public class Tutorial15Callbacks : ScriptableObject
     //e
     public bool E1_RaycastCircleScript()
     {
-        var raycastToMouse = CommonTutorialCallbacks.GameObjectComponent<RaycastWithinCircle>("Player");
+        var raycastToMouse = CommonTutorialCallbacks.GameObjectComponentByName("RaycastWithinCircle", "Player");
         if (raycastToMouse == null) { Criterion.globalLastKnownError = "'Player' is missing 'RaycastWithinCircle' script."; return false; }
 
-        var layerMask = raycastToMouse.layerMask;
+        var layerMask = Tutorial12Callbacks.GetValueOfFieldOnComponentByName<LayerMask>("Player", "RaycastWithinCircle", "layerMask");
         //Debug.Log(layerMask.value+" "+ (((1 << LayerMask.NameToLayer("Enemies")) | (1 << LayerMask.NameToLayer("Walls"))))+" "+(layerMask == ((1 << LayerMask.NameToLayer("Enemies")) | (1 << LayerMask.NameToLayer("Walls")))));
         if (layerMask != ((1 << LayerMask.NameToLayer("Enemies")) | (1 << LayerMask.NameToLayer("Walls")))) { Criterion.globalLastKnownError = "'RaycastWithinCircle' LayerMask must be 'Enemies' and 'Walls'."; return false; }
         return true;
@@ -109,17 +109,17 @@ public class Tutorial15Callbacks : ScriptableObject
     //f
     public bool F1_RaycastReflectionScript()
     {
-        var raycastToMouse = CommonTutorialCallbacks.GameObjectComponent<RaycastWithReflection>("Player");
+        var raycastToMouse = CommonTutorialCallbacks.GameObjectComponentByName("RaycastWithReflection", "Player");
         if (raycastToMouse == null) { Criterion.globalLastKnownError = "'Player' is missing 'RaycastWithReflection' script."; return false; }
 
-        var layerMask = raycastToMouse.layerMask;
+        var layerMask = Tutorial12Callbacks.GetValueOfFieldOnComponentByName<LayerMask>("Player", "RaycastWithReflection", "layerMask");
         //Debug.Log(layerMask.value+" "+ (((1 << LayerMask.NameToLayer("Enemies")) | (1 << LayerMask.NameToLayer("Walls"))))+" "+(layerMask == ((1 << LayerMask.NameToLayer("Enemies")) | (1 << LayerMask.NameToLayer("Walls")))));
         if (layerMask != ((1 << LayerMask.NameToLayer("Enemies")) | (1 << LayerMask.NameToLayer("Walls")))) { Criterion.globalLastKnownError = "'RaycastWithReflection' LayerMask must be 'Enemies' and 'Walls'."; return false; }
         return true;
     }
     public bool F1_DisableRaycastToMouse()
     {
-        var raycastToMouse = CommonTutorialCallbacks.GameObjectComponent<RaycastToMouse>("Player");
+        var raycastToMouse = CommonTutorialCallbacks.GameObjectComponentByName("RaycastToMouse", "Player");
         if (raycastToMouse == null) { Criterion.globalLastKnownError = "'Player' is missing 'RaycastToMouse' script."; return false; }
 
         if (raycastToMouse.enabled) { Criterion.globalLastKnownError = "Disable the 'RaycastToMouse' script on 'Player'."; return false; }
@@ -129,21 +129,22 @@ public class Tutorial15Callbacks : ScriptableObject
     //g
     public bool G1_StartEnd()
     {
-        var tripwire = CommonTutorialCallbacks.GameObjectComponent<TripWire>("TripwireStart");
+        var tripwire = CommonTutorialCallbacks.GameObjectComponentByName("TripWire", "TripwireStart");
         if (tripwire == null) { Criterion.globalLastKnownError = "Could not find 'TripwireStart' with 'TripWire' script."; return false; }
 
         var end = GameObject.Find("TripwireEnd");
         if (end == null) { Criterion.globalLastKnownError = "Could not find 'TripwireEnd' GameObject."; return false; }
 
-        if (tripwire.end != end.transform) { Criterion.globalLastKnownError = "Assign 'TripwireEnd' to 'TripWire' End field."; return false; }
+        var endField = Tutorial12Callbacks.GetValueOfFieldOnComponentByName<Transform>("TripwireStart", "TripWire", "end");
+        if (endField != end.transform) { Criterion.globalLastKnownError = "Assign 'TripwireEnd' to 'TripWire' End field."; return false; }
         return true;
     }
     public bool G1_TripwireMask()
     {
-        var raycastToMouse = CommonTutorialCallbacks.GameObjectComponent<TripWire>("TripwireStart");
+        var raycastToMouse = CommonTutorialCallbacks.GameObjectComponentByName("TripWire", "TripwireStart");
         if (raycastToMouse == null) { Criterion.globalLastKnownError = "Could not find 'TripwireStart' with 'TripWire' script."; return false; }
 
-        var layerMask = raycastToMouse.layerMask;
+        var layerMask = Tutorial12Callbacks.GetValueOfFieldOnComponentByName<LayerMask>("TripwireStart", "TripWire", "layerMask");
         //Debug.Log(layerMask.value+" "+ (((1 << LayerMask.NameToLayer("Enemies")) | (1 << LayerMask.NameToLayer("Walls"))))+" "+(layerMask == ((1 << LayerMask.NameToLayer("Enemies")) | (1 << LayerMask.NameToLayer("Walls")))));
         if (layerMask != ((1 << LayerMask.NameToLayer("Enemies")) | (1 << LayerMask.NameToLayer("Player")))) { Criterion.globalLastKnownError = "'TripWire' LayerMask must be 'Enemies' and 'Player'."; return false; }
         return true;

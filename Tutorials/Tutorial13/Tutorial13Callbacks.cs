@@ -40,7 +40,7 @@ public class Tutorial13Callbacks : ScriptableObject
         if (trail == null) return false;
 
         if (!B1_Trail()) return false;
-        var trail = CommonTutorialCallbacks.GameObjectComponent<TrailRenderer>("Trail");
+        //var trail = CommonTutorialCallbacks.GameObjectComponent<TrailRenderer>("Trail");
         if (trail.transform.localPosition.y >= 0) { Criterion.globalLastKnownError = "'Trail' local Y position should be less than 0 (e.g. -0.5)."; return false; }
         return true;
     }
@@ -310,10 +310,18 @@ public class Tutorial13Callbacks : ScriptableObject
     }
     public bool D9_ExplosionOnDestroy()
     {
-        var script = CommonTutorialCallbacks.PrefabComponent<ExplosionOnDestroy>("Bullet");
+        var prefab = CommonTutorialCallbacks.GetPrefab("Bullet");
+        if (prefab == null) { Criterion.globalLastKnownError = "Could not find 'Bullet' prefab."; return false; }
+        
+        var script = prefab.GetComponent("ExplosionOnDestroy");
         if (script == null) { Criterion.globalLastKnownError = "'Bullet' prefab is missing 'ExplosionOnDestroy' script."; return false; }
 
-        if (script.explosionPrefab == null || !script.explosionPrefab.name.Contains("ExplosionParticles")) { Criterion.globalLastKnownError = "'ExplosionOnDestroy' Explosion Prefab should be 'ExplosionParticles'."; return false; }
+        var explosionPrefabField = script.GetType().GetField("explosionPrefab", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance);
+        if (explosionPrefabField == null) { Criterion.globalLastKnownError = "'ExplosionOnDestroy' script is missing 'explosionPrefab' field."; return false; }
+
+        var explosionPrefab = explosionPrefabField.GetValue(script) as GameObject;
+
+        if (explosionPrefab == null || !explosionPrefab.name.Contains("ExplosionParticles")) { Criterion.globalLastKnownError = "'ExplosionOnDestroy' Explosion Prefab should be 'ExplosionParticles'."; return false; }
         return true;
     }
     public bool D10_StopAction()

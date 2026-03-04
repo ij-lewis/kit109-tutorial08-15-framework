@@ -19,10 +19,14 @@ public class Tutorial09Callbacks : ScriptableObject
         return ScriptableObjectUtils.CreateAsset<Tutorial09Callbacks>(DefaultFileName);
     }
     
+    TextureImporter walls => (TextureImporter)AssetImporter.GetAtPath("Assets/TilemapSprites/WallsMap.png");
+    TextureImporter lights => (TextureImporter)AssetImporter.GetAtPath("Assets/TilemapSprites/LightsMap.png");
+    TextureImporter decor => (TextureImporter)AssetImporter.GetAtPath("Assets/TilemapSprites/DecorMap.png");
+
     //a
     public bool A2_CheckPlayerEightWay()
     {
-        if (!CommonTutorialCallbacks.GameObjectContainsScript<EightWayMovement>("Player")) { Criterion.globalLastKnownError = "Player GameObject is missing 'EightWayMovement' script."; return false; }
+        if (!CommonTutorialCallbacks.GameObjectContainsScriptByName("EightWayMovement", "Player")) { Criterion.globalLastKnownError = "Player GameObject is missing 'EightWayMovement' script."; return false; }
         return true;
     }
     public bool A2_CheckPlayerAnimator()
@@ -222,26 +226,37 @@ public class Tutorial09Callbacks : ScriptableObject
     //f
     public bool F1LightsTile()
     {
-        if (AssetDatabase.LoadAssetAtPath<AnimatedTile>("Assets/Tiles/Lights.asset") == null) { Criterion.globalLastKnownError = "Could not find 'Assets/Tiles/Lights.asset'."; return false; }
+        var assets = AssetDatabase.LoadAllAssetsAtPath("Assets/Tiles/Lights.asset");
+        if (assets == null || assets.Length == 0 || assets[0].GetType().Name != "AnimatedTile") { Criterion.globalLastKnownError = "Could not find 'Assets/Tiles/Lights.asset' of type AnimatedTile."; return false; }
         return true;
     }
     public bool F1LightsTileCount()
     {
-        var tile = AssetDatabase.LoadAssetAtPath<AnimatedTile>("Assets/Tiles/Lights.asset");
-        if (tile == null) { Criterion.globalLastKnownError = "Could not find 'Assets/Tiles/Lights.asset'."; return false; }
+        var assets = AssetDatabase.LoadAllAssetsAtPath("Assets/Tiles/Lights.asset");
+        if (assets == null || assets.Length == 0) { Criterion.globalLastKnownError = "Could not find 'Assets/Tiles/Lights.asset'."; return false; }
+        var tile = assets[0];
 
-        if (tile.m_AnimatedSprites.Length != 2) { Criterion.globalLastKnownError = $"AnimatedTile should have 2 sprites. Found {tile.m_AnimatedSprites.Length}."; return false; }
+        var spritesField = tile.GetType().GetField("m_AnimatedSprites", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance);
+        if (spritesField == null) return false;
+        var sprites = spritesField.GetValue(tile) as Sprite[];
+
+        if (sprites == null || sprites.Length != 2) { Criterion.globalLastKnownError = $"AnimatedTile should have 2 sprites. Found {(sprites == null ? 0 : sprites.Length)}."; return false; }
         return true;
     }
     public bool F1LightsTileSprites()
     {
-        var tile = AssetDatabase.LoadAssetAtPath<AnimatedTile>("Assets/Tiles/Lights.asset");
-        if (tile == null) { Criterion.globalLastKnownError = "Could not find 'Assets/Tiles/Lights.asset'."; return false; }
+        var assets = AssetDatabase.LoadAllAssetsAtPath("Assets/Tiles/Lights.asset");
+        if (assets == null || assets.Length == 0) { Criterion.globalLastKnownError = "Could not find 'Assets/Tiles/Lights.asset'."; return false; }
+        var tile = assets[0];
 
-        if (tile.m_AnimatedSprites.Length != 2) { Criterion.globalLastKnownError = "AnimatedTile sprite count incorrect."; return false; }
+        var spritesField = tile.GetType().GetField("m_AnimatedSprites", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance);
+        if (spritesField == null) return false;
+        var sprites = spritesField.GetValue(tile) as Sprite[];
+
+        if (sprites == null || sprites.Length != 2) { Criterion.globalLastKnownError = "AnimatedTile sprite count incorrect."; return false; }
         
-        bool sprite0Correct = tile.m_AnimatedSprites[0] != null && tile.m_AnimatedSprites[0].name.Equals("LightsMap_0");
-        bool sprite1Correct = tile.m_AnimatedSprites[1] != null && tile.m_AnimatedSprites[1].name.Equals("LightsMap_1");
+        bool sprite0Correct = sprites[0] != null && sprites[0].name.Equals("LightsMap_0");
+        bool sprite1Correct = sprites[1] != null && sprites[1].name.Equals("LightsMap_1");
 
         if (!sprite0Correct || !sprite1Correct) { Criterion.globalLastKnownError = "AnimatedTile sprites should be 'LightsMap_0' and 'LightsMap_1'."; return false; }
         return true;
