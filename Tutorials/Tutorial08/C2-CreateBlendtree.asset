@@ -115,7 +115,7 @@ MonoBehaviour:
         m_Untranslated: Create a Blendtree State
       Text:
         m_Untranslated: "Right-click in the Animator window area and choose \u201CCreate
-          State / From New Blend Tree\u201D.\nName it \"Walking\"."
+          State / From New Blend Tree\u201D.\nName it \"Walking\" (select it, and rename it via the Inspector)."
       m_PollItems: []
       m_PollCorrectItemIndexes: 00000000
       m_Tutorial: {fileID: 0}

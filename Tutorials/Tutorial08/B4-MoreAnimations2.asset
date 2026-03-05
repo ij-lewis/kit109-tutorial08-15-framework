@@ -18,7 +18,7 @@ MonoBehaviour:
       Title:
         m_Untranslated: Creating More Walking Animations
       Text:
-        m_Untranslated: "Your project will also have two other folders called \u201CStanding\u201D
+        m_Untranslated: "Your project will also have two other folders called \u201CIdle\u201D
           and \u201CShooting\u201D that contain animation clips (that are actually
           just a single frame) for the eight directions of those actions that we\u2019ll
           use later.\r\nNow press play. You should see a running man (either in just

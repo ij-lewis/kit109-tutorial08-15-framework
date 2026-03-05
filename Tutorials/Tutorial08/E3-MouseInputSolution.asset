@@ -22,7 +22,7 @@ MonoBehaviour:
 
           <code>
 
-          bool shooting = Mouse.current.leftButton.isPressed
+          bool shooting = Mouse.current.leftButton.isPressed;
 
           </code>
 

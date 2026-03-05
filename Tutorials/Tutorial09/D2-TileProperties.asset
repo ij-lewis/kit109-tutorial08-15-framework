@@ -20,13 +20,13 @@ MonoBehaviour:
       Text:
         m_Untranslated: 'We only want the walls on this tilemap to be collided with
           by the player, not the floor. The way we specify this is to change the
-          Collider type for the floor tile (if done correctly this <i>should</i>
-          be <asset>WallsMap_10</asset>. (note to get past this step, it is okay
-          if you need to rename the blank black tile to be "WallsMap_10". '
+          Collider type for the floor tile (if you''ve followed all the previous steps correctly this floor tile <i>should</i>
+          be <asset>WallsMap_10</asset>). '
       m_PollItems: []
       m_PollCorrectItemIndexes: 00000000
       m_Tutorial: {fileID: 0}
       m_Image: {fileID: 0}
+      disableImagePopup: 0
       m_Video: {fileID: 0}
       m_CriteriaCompletion: 0
       m_Criteria:
@@ -45,12 +45,13 @@ MonoBehaviour:
       Title:
         m_Untranslated: Select the Blank Black Floor Tile
       Text:
-        m_Untranslated: 'Using the "Select" tool in the Tile Palette you''ll get
-          information about the grid location you selected. '
+        m_Untranslated: 'Using the "Select" tool (the little arrow head tool) in the Tile Palette you''ll get
+          information about the grid location you selected. You can select tiles in the Scene or in the Tile Palette.'
       m_PollItems: []
       m_PollCorrectItemIndexes: 00000000
       m_Tutorial: {fileID: 0}
       m_Image: {fileID: 0}
+      disableImagePopup: 0
       m_Video: {fileID: 0}
       m_CriteriaCompletion: 0
       m_Criteria:
@@ -69,15 +70,16 @@ MonoBehaviour:
       Title:
         m_Untranslated: 
       Text:
-        m_Untranslated: "Here we can see that the Collider Type is \u201CSprite\u201D.
-          But we cannot change this, as this is an instance of a tile. We need to
-          go all the way back to the Tile Asset to change this. "
+        m_Untranslated: "In the Inspector, we can see a bunch of settings, and one is that the Collider Type is \u201CSprite\u201D.
+          It's greyed out, so we cannot change this here, as what we are viewing is an <i>instance</i> of a tile. We need to
+          go all the way back to the correct Tile Asset to change some properties. "
       m_PollItems: []
       m_PollCorrectItemIndexes: 00000000
       m_Tutorial: {fileID: 0}
       m_Image: {fileID: 0}
+      disableImagePopup: 0
       m_Video: {fileID: 0}
-      m_CriteriaCompletion: 0
+      m_CriteriaCompletion: 2
       m_Criteria:
         m_Items: []
       m_PossibleErrors: []

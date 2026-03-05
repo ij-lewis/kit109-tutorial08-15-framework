@@ -48,7 +48,7 @@ MonoBehaviour:
       Text:
         m_Untranslated: 'You could search through the project pane for the floor
           tile, or we can double click on the tile in the inspector view we just
-          opened (<asset>WallsMap_10</asset>). It is in this inspector that we can
+          opened (<asset>WallsMap_10</asset>). It is this asset that we can modifiy via the Inspector to
           change the collider type, sprite colour, etc. '
       m_PollItems: []
       m_PollCorrectItemIndexes: 00000000
@@ -70,9 +70,9 @@ MonoBehaviour:
       codeBlockText: 
     - m_Type: 1
       Title:
-        m_Untranslated: Change the Collider Type of WallsMap_10 to None
+        m_Untranslated: Change the Collider Type of the WallsMap_10 asset to None
       Text:
-        m_Untranslated: 
+        m_Untranslated: "NOTE: If your floor tile isn't called \"WallsMap_10\", then either rename it, or shift-click on the \"Next\" button to continue."
       m_PollItems: []
       m_PollCorrectItemIndexes: 00000000
       m_Tutorial: {fileID: 0}

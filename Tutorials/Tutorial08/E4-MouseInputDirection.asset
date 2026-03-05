@@ -56,7 +56,7 @@ MonoBehaviour:
       Title:
         m_Untranslated: Add the Following Code to PlayerShooting
       Text:
-        m_Untranslated: 'Add this code inside the <c>if (shooting)</c> if statement:
+        m_Untranslated: 'Add this code inside the <c>if (shooting)</c> if statement (inside the curly braces <c>{</c> ... <c>}</c>:
 
           <code>
 
@@ -64,7 +64,7 @@ MonoBehaviour:
           to mouse is a vector between mouse position (A) and the player (B), so
           (A-B):
 
-          Vector2 A = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+          Vector2 A = Camera.main.ScreenToWorldPoint(Mouse.current.position.value);
 
           Vector2
           B = transform.position;
